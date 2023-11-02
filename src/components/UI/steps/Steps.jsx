@@ -48,6 +48,10 @@ const Steps = ({ title, steps, buttonText }) => {
           bottom: 0,
           height: "110%",
           width: "50%",
+          transition: ".3s",
+          "&:hover": {
+            transform: "scale(1.05)",
+          },
         }}
       />
     </Box>

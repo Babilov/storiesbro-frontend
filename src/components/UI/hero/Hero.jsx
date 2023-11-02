@@ -41,7 +41,18 @@ const Hero = ({ title, content, buttonText, image }) => {
           {buttonText}
         </GradientButton>
       </Box>
-      <Box component="img" alt="hero" src={image} sx={{ width: "36%" }} />
+      <Box
+        component="img"
+        alt="hero"
+        src={image}
+        sx={{
+          width: "36%",
+          transition: ".3s",
+          "&:hover": {
+            transform: "scale(1.05)",
+          },
+        }}
+      />
     </Box>
   );
 };

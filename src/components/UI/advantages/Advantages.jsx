@@ -26,7 +26,15 @@ const Advantages = ({ images }) => {
             md={6}
             xs={12}
             key={index}
-            sx={{ display: "flex", alignItems: "center", mt: 5 }}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              mt: 5,
+              transition: ".3s",
+              "&:hover": {
+                transform: "scale(1.1)",
+              },
+            }}
           >
             <Box
               component="img"

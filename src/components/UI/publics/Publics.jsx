@@ -28,7 +28,7 @@ publics[memCat] = ["Мемные коты", "175.000"];
 publics[limit] = ["ЛИМИТ", "323.000"];
 publics[perepison] = ["Переписон", "540.000"];
 
-const Publics = ({ title }) => {
+const Publics = () => {
   return (
     <Box>
       <Typography
@@ -40,9 +40,15 @@ const Publics = ({ title }) => {
           m: "50px 0 35px",
         }}
       >
-        {title.map((word, index) => (
-          <span key={index}> {word} </span>
-        ))}
+        Уже монетизируем{" "}
+        <Typography
+          component="span"
+          className="orange"
+          sx={{ fontSize: { xs: "16px", sm: "32px" }, fontWeight: 600 }}
+        >
+          более 1000{" "}
+        </Typography>
+        сообществ
       </Typography>
       <Grid container rowSpacing={3} columnSpacing={2}>
         {Object.keys(publics).map((image, index) => (
@@ -57,6 +63,10 @@ const Publics = ({ title }) => {
               flexDirection: "column",
               justifyContent: "space-between",
               textAlign: "center",
+              transition: ".3s",
+              "&:hover": {
+                transform: "scale(1.1)",
+              },
             }}
           >
             <Box

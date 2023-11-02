@@ -10,7 +10,7 @@ import React from "react";
 
 const FAQ = ({ questions, background, color }) => {
   return (
-    <Box>
+    <Box sx={{ m: "70px 0" }}>
       <Typography
         sx={{
           fontWeight: 600,

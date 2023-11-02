@@ -8,10 +8,10 @@ const CallToAction = ({ background }) => {
     <Box
       sx={{
         background: background,
-        paddingLeft: "3000px",
-        marginLeft: "-3000px",
-        paddingRight: "3000px",
-        marginRight: "-3000px",
+        paddingLeft: "37.5%",
+        marginLeft: "-37.5%",
+        paddingRight: "37.5%",
+        marginRight: "-37.5%",
         textAlign: "center",
         pt: 5,
         pb: 5,

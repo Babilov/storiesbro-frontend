@@ -4,6 +4,7 @@ import Hero from "../components/UI/hero/Hero";
 import Examples from "../components/UI/examples/Examples";
 
 import hero2 from "../images/hero2.svg";
+import Ford from "../images/Ford.svg";
 import robot from "../images/customerAdvantages/robot.svg";
 import stats from "../images/customerAdvantages/stats.svg";
 import wheel from "../images/customerAdvantages/wheel.svg";
@@ -18,6 +19,8 @@ import FAQ from "../components/UI/faq/FAQ";
 import CallToAction from "../components/UI/callToAction/CallToAction";
 import Footer from "../components/UI/footer/Footer";
 import LoginForm from "../components/UI/modals/LoginForm";
+import Quotation from "../components/UI/quotation/Quotation";
+import Publics from "../components/UI/publics/Publics";
 
 const CustomerPage = ({ isLoginFormOpen, setIsLoginFormOpen }) => {
   const images = {};
@@ -69,6 +72,18 @@ const CustomerPage = ({ isLoginFormOpen, setIsLoginFormOpen }) => {
 
           <Grid item xs={12}>
             <Advantages images={images} />
+          </Grid>
+
+          <Grid item xs={12}>
+            <Quotation
+              quote="« Я не знаю какой результат принесёт мне реклама, но даже если я заработаю доллар — я вложу его в рекламу»"
+              person="© Генри Форд"
+              image={Ford}
+            />
+          </Grid>
+
+          <Grid item xs={12}>
+            <Publics />
           </Grid>
 
           <Grid item xs={12}>

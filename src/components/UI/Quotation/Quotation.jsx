@@ -11,18 +11,31 @@ const Quotation = ({ quote, person, image }) => {
       sx={{
         display: "flex",
         alignItems: "center",
-        p: "40px 40px 0",
+        p: "0 40px 0",
         mt: 5,
+        position: "relative",
       }}
     >
       <Box>
-        <Typography sx={{ fontSize: "1.5rem", fontWeight: 400 }}>
+        <Typography
+          sx={{ fontSize: { sx: "14px", sm: "24px" }, fontWeight: 400 }}
+        >
           {quote}
         </Typography>
-        <Typography className="orange">{person}</Typography>
+        <Typography
+          sx={{ fontSize: { sx: "14px", sm: "24px" }, fontWeight: 400 }}
+          className="orange"
+        >
+          {person}
+        </Typography>
       </Box>
 
-      <Box component="img" src={image} alt="Buffet" sx={{ width: "40%" }} />
+      <Box
+        component="img"
+        src={image}
+        alt="Buffet"
+        sx={{ width: "50%", mt: 5 }}
+      />
     </Box>
   );
 };

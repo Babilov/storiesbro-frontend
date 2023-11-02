@@ -23,6 +23,11 @@ const GradientButton = ({
         fontSize: { xs: "16px", sm: "26px" },
         fontWeight: 600,
         background: disabled && "#CBCBCB",
+        transition: ".3s",
+        "&:hover": {
+          filter: "brightness(85%)",
+          boxShadow: "3px 3px 5px rgba(0, 0, 0, 0.2)",
+        },
       }}
     >
       {children}

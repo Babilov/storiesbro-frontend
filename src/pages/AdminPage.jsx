@@ -4,7 +4,7 @@ import { Grid, Container } from "@mui/material";
 import Header from "../components/UI/header/Header";
 import Hero from "../components/UI/hero/Hero";
 import Advantages from "../components/UI/advantages/Advantages";
-import Quotation from "../components/UI/Quotation/Quotation";
+import Quotation from "../components/UI/quotation/Quotation";
 import heroImage from "../images/heroImage.svg";
 import BuffetImg from "../images/BuffetImg.svg";
 import Publics from "../components/UI/publics/Publics";
@@ -87,13 +87,7 @@ const AdminPage = ({ isLoginFormOpen, setIsLoginFormOpen }) => {
         </Grid>
 
         <Grid item xs={12}>
-          <Publics
-            title={[
-              "Уже монетизируем",
-              <span className="orange">более 1000</span>,
-              "сообществ",
-            ]}
-          />
+          <Publics />
         </Grid>
 
         <Grid item xs={12}>
