@@ -17,22 +17,46 @@ const MyCarousel = () => {
       navigation
     >
       <SwiperSlide>
-        <Box component="img" src={storisImage} />
+        <Box
+          sx={{ width: { xs: "100%", sm: "100%" } }}
+          component="img"
+          src={storisImage}
+        />
       </SwiperSlide>
       <SwiperSlide>
-        <Box component="img" src={storisImage} />
+        <Box
+          sx={{ width: { xs: "100%", sm: "100%" } }}
+          component="img"
+          src={storisImage}
+        />
       </SwiperSlide>
       <SwiperSlide>
-        <Box component="img" src={storisImage} />
+        <Box
+          sx={{ width: { xs: "100%", sm: "100%" } }}
+          component="img"
+          src={storisImage}
+        />
       </SwiperSlide>
       <SwiperSlide>
-        <Box component="img" src={storisImage} />
+        <Box
+          sx={{ width: { xs: "100%", sm: "100%" } }}
+          component="img"
+          src={storisImage}
+        />
       </SwiperSlide>
       <SwiperSlide>
-        <Box component="img" src={storisImage} />
+        <Box
+          sx={{ width: { xs: "100%", sm: "100%" } }}
+          component="img"
+          src={storisImage}
+        />
       </SwiperSlide>
       <SwiperSlide>
-        <Box component="img" src={storisImage} />
+        <Box
+          sx={{ width: { xs: "100%", sm: "100%" } }}
+          component="img"
+          src={storisImage}
+        />
       </SwiperSlide>
     </Swiper>
   );

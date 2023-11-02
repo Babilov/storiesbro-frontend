@@ -1,52 +1,73 @@
-import React from "react";
-import { Box, Typography } from "@mui/material";
+import React, { useContext } from "react";
+import { Box, Typography, Grid } from "@mui/material";
 
-import logo from "../../../images/icons/logo.svg";
+import FooterText from "./FooterText";
+import FooterImage from "./FooterImage";
 import vkBlack from "../../../images/icons/vkBlack.svg";
+import vkWhite from "../../../images/icons/vkWhite.svg";
+import { Context } from "../../../context/Context";
 
 const Footer = () => {
+  const [isAdmin, _] = useContext(Context);
   return (
-    <Box
+    <Grid
+      container
       sx={{
         display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
+        alignItems: "flex-end",
         height: "83px",
       }}
     >
-      <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-        <Box component="img" alt="logo" src={logo} sx={{ mr: 1 }} />
-        <Typography sx={{ fontWeight: 400, fontSize: "18px" }}>
+      <Grid
+        item
+        xs={1}
+        md={1}
+        order={{ xs: 1 }}
+        sx={{ display: "flex", alignItems: "flex-end" }}
+      >
+        <FooterImage isAdmin={isAdmin} />
+      </Grid>
+      <Grid order={{ xs: 4, md: 2 }} item md={4} xs={12}>
+        <Typography
+          sx={{
+            fontWeight: 400,
+            fontSize: { xs: "10px", sm: "18px" },
+            color: { xs: "#878787", md: "black" },
+            textAlign: "center",
+          }}
+        >
           ©2023 Storisbro. Все права защищены
         </Typography>
-      </Box>
-      <Box
+      </Grid>
+      <Grid
+        order={{ xs: 2, md: 3 }}
+        md={5}
+        xs={6}
+        item
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-between",
-          height: "83px",
           fontWeight: 400,
           fontSize: "18px",
         }}
       >
-        <Typography sx={{ fontWeight: 400, fontSize: "18px" }}>
-          Правила пользования
-        </Typography>
-        <Typography sx={{ fontWeight: 400, fontSize: "18px" }}>
-          Пользовательское соглашение
-        </Typography>
-      </Box>
-      <Box
+        <FooterText>Правила пользования</FooterText>
+        <FooterText>Пользовательское соглашение</FooterText>
+      </Grid>
+      <Grid
+        order={{ xs: 3, md: 4 }}
+        item
+        md={2}
+        xs={4}
         sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
       >
-        <Typography sx={{ fontWeight: 400, fontSize: "18px" }}>
-          Наши соцсети
-        </Typography>
-        <Box component="img" alt="vk" src={vkBlack} />
-      </Box>
-    </Box>
+        <FooterText>Наши соцсети</FooterText>
+        <Box
+          component="img"
+          alt="vk"
+          src={!isAdmin ? vkWhite : vkBlack}
+          sx={{ width: "15%", color: "white" }}
+        />
+      </Grid>
+    </Grid>
   );
 };
 

@@ -16,7 +16,7 @@ import perepison from "../../../images/adminPublics/perepison.svg";
 
 const publics = {};
 publics[tolMems] = ["Толерантные мемы", "105.000"];
-publics[guides] = ["Гайды на все случаи жизни", "708.000"];
+publics[guides] = ["Гайды", "708.000"];
 publics[mailRofls] = ["Рофлим с mail.ru", "223.000"];
 publics[honeyAge] = ["Сладкий возраст", "349.000"];
 publics[memPic] = ["Мемные картиночки", "172.000"];
@@ -34,21 +34,23 @@ const Publics = ({ title }) => {
       <Typography
         variant="h4"
         sx={{
-          fontSize: "32px",
+          fontSize: { xs: "16px", sm: "32px" },
           fontWeight: 600,
           textAlign: "center",
           m: "50px 0 35px",
         }}
       >
         {title.map((word, index) => (
-          <span key={index}>{word}</span>
+          <span key={index}> {word} </span>
         ))}
       </Typography>
-      <Grid container spacing={3}>
+      <Grid container rowSpacing={3} columnSpacing={2}>
         {Object.keys(publics).map((image, index) => (
           <Grid
             item
-            xs={2}
+            md={2}
+            sm={4}
+            xs={6}
             key={index}
             sx={{
               display: "flex",
@@ -57,10 +59,15 @@ const Publics = ({ title }) => {
               textAlign: "center",
             }}
           >
-            <Box component="img" alt="public" src={image} />
+            <Box
+              component="img"
+              alt="public"
+              src={image}
+              sx={{ width: { xs: "20%", sm: "43%" }, margin: "0 auto" }}
+            />
             <Typography
               variant="body1"
-              sx={{ fontWeight: 600, fontSize: "22px" }}
+              sx={{ fontWeight: 600, fontSize: { sm: "22px", xs: "14px" } }}
             >
               {publics[image][0]}
             </Typography>
@@ -68,7 +75,9 @@ const Publics = ({ title }) => {
               variant="body1"
               sx={{
                 fontWeight: 500,
-                fontSize: "22px",
+                width: { xs: "35%", sm: "100%" },
+                margin: "0 auto",
+                fontSize: { sm: "22px", xs: "14px" },
                 background: "#E37E31",
                 color: "white",
                 borderRadius: "20px",

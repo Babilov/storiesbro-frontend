@@ -8,11 +8,15 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import React from "react";
 
-const FAQ = ({ questions }) => {
+const FAQ = ({ questions, background, color }) => {
   return (
     <Box>
       <Typography
-        sx={{ fontWeight: 600, fontSize: "32px", textAlign: "center" }}
+        sx={{
+          fontWeight: 600,
+          fontSize: { xs: "16px", sm: "32px" },
+          textAlign: "center",
+        }}
       >
         Часто задаваемые вопросы
       </Typography>
@@ -26,6 +30,8 @@ const FAQ = ({ questions }) => {
             boxShadow: "none",
             position: "static",
             mb: 1,
+            background: background,
+            color: color,
           }}
         >
           <AccordionSummary
@@ -35,12 +41,16 @@ const FAQ = ({ questions }) => {
               <ExpandMoreIcon sx={{ color: "#E37E31", fontSize: "35px" }} />
             }
           >
-            <Typography sx={{ fontWeight: 400, fontSize: "24px" }}>
+            <Typography
+              sx={{ fontWeight: 400, fontSize: { sx: "14px", sm: "24px" } }}
+            >
               {question}
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography sx={{ fontWeight: 400, fontSize: "18px" }}>
+            <Typography
+              sx={{ fontWeight: 400, fontSize: { sx: "12px", sm: "18px" } }}
+            >
               {questions[question]}
             </Typography>
           </AccordionDetails>

@@ -1,7 +1,14 @@
 import { Button } from "@mui/material";
 import React from "react";
 
-const GradientButton = ({ children, height, width, handleClick, disabled }) => {
+const GradientButton = ({
+  children,
+  height,
+  width,
+  xsWidth,
+  handleClick,
+  disabled,
+}) => {
   return (
     <Button
       disabled={disabled}
@@ -9,11 +16,11 @@ const GradientButton = ({ children, height, width, handleClick, disabled }) => {
       onClick={handleClick}
       className="orangeGradient"
       sx={{
-        width: { width },
-        height: { height },
+        width: { sm: width, xs: xsWidth },
+        height: { sx: "50px", sm: "72px" },
         borderRadius: "90px",
         color: "white",
-        fontSize: "26px",
+        fontSize: { xs: "16px", sm: "26px" },
         fontWeight: 600,
         background: disabled && "#CBCBCB",
       }}

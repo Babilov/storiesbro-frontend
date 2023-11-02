@@ -15,22 +15,33 @@ const Hero = ({ title, content, buttonText, image }) => {
       }}
     >
       <Box>
-        <Typography variant="h4" sx={{ fontWeight: 600, fontSize: "38px" }}>
+        <Typography
+          variant="h4"
+          sx={{
+            fontWeight: 600,
+            fontSize: { sm: "25px", md: "38px", xs: "18px" },
+          }}
+        >
           {title.map((word, index) => (
             <span key={index}>{word}</span>
           ))}
         </Typography>
         <Typography
           variant="body1"
-          sx={{ fontSize: "24px", fontWeight: 400, mt: 4, mb: 4 }}
+          sx={{
+            fontSize: { sm: "20px", xs: "14px", md: "24px" },
+            fontWeight: 400,
+            mt: 4,
+            mb: 4,
+          }}
         >
           {content}
         </Typography>
-        <GradientButton width="390px" height="72px">
+        <GradientButton width="68%" height="20%">
           {buttonText}
         </GradientButton>
       </Box>
-      <Box component="img" alt="hero" src={image} />
+      <Box component="img" alt="hero" src={image} sx={{ width: "36%" }} />
     </Box>
   );
 };

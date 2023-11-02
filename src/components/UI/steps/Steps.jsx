@@ -10,31 +10,45 @@ const Steps = ({ title, steps, buttonText }) => {
       className="orangeBorder"
       sx={{
         width: "100%",
-        p: 5,
+        pl: 5,
+        pb: 3,
         display: "flex",
         position: "relative",
         flexDirection: "column",
         justifyContent: "space-between",
       }}
     >
-      <Typography sx={{ fontSize: "32px", fontWeight: 600, mt: 8 }}>
-        {title}
-      </Typography>
-      <Box sx={{ mb: 10 }}>
-        {steps.map((step, index) => (
-          <Typography key={index} sx={{ fontSize: "24px", fontWeight: 400 }}>
-            {index + 1}. {step}
-          </Typography>
-        ))}
+      <Box sx={{ width: "60%" }}>
+        <Typography
+          sx={{ fontSize: { sm: "32px", xs: "16px" }, fontWeight: 600, mt: 8 }}
+        >
+          {title}
+        </Typography>
+        <Box sx={{ mb: 5 }}>
+          {steps.map((step, index) => (
+            <Typography
+              key={index}
+              sx={{ fontSize: { sm: "24px", xs: "14px" }, fontWeight: 400 }}
+            >
+              {index + 1}. {step}
+            </Typography>
+          ))}
+        </Box>
       </Box>
-      <GradientButton width="390px" height="72px">
+      <GradientButton width="390px" xsWidth="247px" height="72px">
         {buttonText}
       </GradientButton>
       <Box
         component="img"
         alt="scroodge"
         src={Scrooge}
-        sx={{ position: "absolute", right: 0, bottom: 0 }}
+        sx={{
+          position: "absolute",
+          right: 0,
+          bottom: 0,
+          height: "110%",
+          width: "50%",
+        }}
       />
     </Box>
   );

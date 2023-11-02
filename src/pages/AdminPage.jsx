@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Grid, Container } from "@mui/material";
 
 import Header from "../components/UI/header/Header";
 import Hero from "../components/UI/hero/Hero";
 import Advantages from "../components/UI/advantages/Advantages";
-import Buffet from "../components/UI/buffet/Buffet";
+import Quotation from "../components/UI/Quotation/Quotation";
 import heroImage from "../images/heroImage.svg";
 import BuffetImg from "../images/BuffetImg.svg";
 import Publics from "../components/UI/publics/Publics";
@@ -15,9 +15,27 @@ import CallToAction from "../components/UI/callToAction/CallToAction";
 import Footer from "../components/UI/footer/Footer";
 import LoginForm from "../components/UI/modals/LoginForm";
 
-const AdminPage = () => {
-  const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
+import bot from "../images/adminAdvantages/bot.svg";
+import cashBag from "../images/adminAdvantages/cashBag.svg";
+import helpDesk from "../images/adminAdvantages/helpDesk.svg";
+import hours from "../images/adminAdvantages/hours.svg";
+import smartphone from "../images/adminAdvantages/smartphone.svg";
+import speeding from "../images/adminAdvantages/speeding.svg";
+import stats from "../images/adminAdvantages/stats.svg";
+import steeringWheel from "../images/adminAdvantages/steeringWheel.svg";
 
+const images = {};
+images[smartphone] =
+  "Все креативы проверяются вручную на соответствие правилам Вконтакте";
+images[stats] = "Прозрачная статистика и доходы";
+images[steeringWheel] = "Простое управление";
+images[speeding] = "Гибкая и оперативная система выплат";
+images[cashBag] = "Хорошие условия по реферальной программе";
+images[helpDesk] = "Отзывчивая тех. поддержка 24/7";
+images[bot] = "Автоматическая публикация историй";
+images[hours] = "Постоянная монетизация сообществ";
+
+const AdminPage = ({ isLoginFormOpen, setIsLoginFormOpen }) => {
   const questions = {
     "Разрешена ли реклама в историях?":
       "Да, разрешена. Главное, чтобы рекламные истории соответствовали правилам Вконтакте, поэтому мы проверяем все креативы вручную.",
@@ -33,14 +51,16 @@ const AdminPage = () => {
 
   return (
     <Container>
-      <Grid container rowSpacing={5}>
+      <Grid container rowSpacing={2}>
         <LoginForm
           isLoginFormOpen={isLoginFormOpen}
           setIsLoginFormOpen={setIsLoginFormOpen}
         />
+
         <Grid item xs={12}>
           <Header setIsLoginFormOpen={setIsLoginFormOpen} />
         </Grid>
+
         <Grid item xs={12}>
           <Hero
             title={[
@@ -53,16 +73,19 @@ const AdminPage = () => {
             image={heroImage}
           />
         </Grid>
+
         <Grid item xs={12}>
-          <Advantages />
+          <Advantages images={images} />
         </Grid>
+
         <Grid item xs={12}>
-          <Buffet
+          <Quotation
             quote="«Если ты не найдешь способ зарабатывать деньги, пока ты спишь, то ты будешь работать, пока не умрешь»"
             person="© Уоррен Баффет"
             image={BuffetImg}
           />
         </Grid>
+
         <Grid item xs={12}>
           <Publics
             title={[
@@ -72,6 +95,7 @@ const AdminPage = () => {
             ]}
           />
         </Grid>
+
         <Grid item xs={12}>
           <Examples />
         </Grid>
@@ -83,12 +107,15 @@ const AdminPage = () => {
             buttonText="Начать зарабатывать"
           />
         </Grid>
-        <Grid item xs={8} sx={{ m: "0 auto" }}>
+
+        <Grid item xs={12} md={8} sx={{ m: "0 auto" }}>
           <FAQ questions={questions} />
         </Grid>
-        <Grid item xs={7} sx={{ m: "0 auto" }}>
-          <CallToAction />
+
+        <Grid item xs={11} md={9} sx={{ m: "0 auto" }}>
+          <CallToAction background="#FBECE0" />
         </Grid>
+
         <Grid item xs={12}>
           <Footer />
         </Grid>

@@ -4,7 +4,7 @@ import "../../../styles/border.css";
 import "../../../styles/colors.css";
 import { Box, Typography } from "@mui/material";
 
-const Buffet = ({ quote, person, image }) => {
+const Quotation = ({ quote, person, image }) => {
   return (
     <Box
       className="orangeBorder"
@@ -16,15 +16,15 @@ const Buffet = ({ quote, person, image }) => {
       }}
     >
       <Box>
-        <Typography sx={{ fontSize: "24px", fontWeight: 400 }}>
+        <Typography sx={{ fontSize: "1.5rem", fontWeight: 400 }}>
           {quote}
         </Typography>
         <Typography className="orange">{person}</Typography>
       </Box>
 
-      <Box component="img" src={image} alt="Buffet" sx={{ fontSize: "18px" }} />
+      <Box component="img" src={image} alt="Buffet" sx={{ width: "40%" }} />
     </Box>
   );
 };
 
-export default Buffet;
+export default Quotation;
