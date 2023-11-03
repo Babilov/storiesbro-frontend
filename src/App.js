@@ -4,23 +4,18 @@ import "./styles/App.css";
 import AdminPage from "./pages/AdminPage";
 import CustomerPage from "./pages/CustomerPage";
 import { Context } from "./context/Context";
+import { Route, Routes } from "react-router-dom";
+import Profile from "./pages/Profile";
 
 function App() {
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
   const [isAdmin, setIsAdmin] = useState(true);
-  return isAdmin ? (
+  return (
     <Context.Provider value={[isAdmin, setIsAdmin]}>
-      <AdminPage
-        isLoginFormOpen={isLoginFormOpen}
-        setIsLoginFormOpen={setIsLoginFormOpen}
-      />
-    </Context.Provider>
-  ) : (
-    <Context.Provider value={[isAdmin, setIsAdmin]}>
-      <CustomerPage
-        isLoginFormOpen={isLoginFormOpen}
-        setIsLoginFormOpen={setIsLoginFormOpen}
-      />
+      <Routes>
+        <Route path="/" element={isAdmin ? <AdminPage /> : <CustomerPage />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
     </Context.Provider>
   );
 }

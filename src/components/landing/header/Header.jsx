@@ -18,14 +18,14 @@ const Header = ({ setIsLoginFormOpen }) => {
         display: "flex",
         justifyContent: "space-between",
         boxShadow: "none",
-        background: !isAdmin ? "#161616" : "white",
+        background: isAdmin ? "#161616" : "white",
       }}
     >
       <Grid
         item
         component="img"
         alt="logo"
-        src={!isAdmin ? blackLogo : logo}
+        src={isAdmin ? blackLogo : logo}
         sx={{
           height: { xs: "50px", sm: "95px" },
           width: { xs: "30px", sm: "60px" },
@@ -41,8 +41,8 @@ const Header = ({ setIsLoginFormOpen }) => {
           justifyContent: "center",
           height: { xs: "50px", sm: "auto" },
           background: {
-            xs: !isAdmin ? "#292929" : "#FBECE0",
-            sm: !isAdmin ? "#161616" : "white",
+            xs: isAdmin ? "#292929" : "#FBECE0",
+            sm: isAdmin ? "#161616" : "white",
           },
         }}
         order={{ xs: 1, sm: 2 }}
@@ -53,7 +53,7 @@ const Header = ({ setIsLoginFormOpen }) => {
           sx={{
             fontSize: { sm: "22px", xs: "15px" },
             fontWeight: 500,
-            color: !isAdmin && "white",
+            color: isAdmin && "white",
           }}
         >
           Заказчикам
@@ -63,7 +63,7 @@ const Header = ({ setIsLoginFormOpen }) => {
           sx={{
             fontSize: { sm: "22px", xs: "15px" },
             fontWeight: 500,
-            color: !isAdmin && "white",
+            color: isAdmin && "white",
           }}
         >
           Владельцам сообществ

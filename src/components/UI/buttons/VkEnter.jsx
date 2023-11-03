@@ -12,10 +12,10 @@ const VkEnter = ({ children }) => {
         fontWeight: 600,
         fontSize: { sx: "16px", sm: "26px" },
         color: "black",
-        border: `2px solid ${!isAdmin ? "white" : "#2A5885"}`,
+        border: `2px solid ${isAdmin ? "white" : "#2A5885"}`,
         borderRadius: "90px",
         padding: "5px 70px",
-        background: !isAdmin && "white",
+        background: isAdmin && "white",
       }}
     >
       {children}

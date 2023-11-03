@@ -9,7 +9,7 @@ const FooterImage = ({ isAdmin }) => {
     <Box
       component="img"
       alt="logo"
-      src={!isAdmin ? blackLogo : logo}
+      src={isAdmin ? blackLogo : logo}
       sx={{ mr: 1, width: "50%" }}
     />
   );
