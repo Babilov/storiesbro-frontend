@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
-
-import GradientButton from "../buttons/GradientButton";
+import GradientButton from "../../UI/buttons/GradientButton";
 
 const Advantages = ({ images }) => {
   return (

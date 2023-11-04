@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 
-import Switcher from "../switcher/Switcher";
 import "../../../styles/font.css";
 import "../../../styles/colors.css";
-import logo from "../../../images/icons/logo.svg";
-import blackLogo from "../../../images/icons/blackLogo.svg";
-import enter from "../../../images/icons/enter.svg";
+import logo from "../../../images/icons/commonIcons/logo.svg";
+import blackLogo from "../../../images/icons/commonIcons/blackLogo.svg";
+import enter from "../../../images/icons/landingIcons/enter.svg";
 import { Context } from "../../../context/Context";
+import Switcher from "../../UI/switcher/Switcher";
 
 const Header = ({ setIsLoginFormOpen }) => {
-  const [isAdmin, _] = useContext(Context);
+  const [isCustomer, _] = useContext(Context);
   return (
     <Grid
       container
@@ -18,14 +18,14 @@ const Header = ({ setIsLoginFormOpen }) => {
         display: "flex",
         justifyContent: "space-between",
         boxShadow: "none",
-        background: isAdmin ? "#161616" : "white",
+        background: isCustomer ? "#161616" : "white",
       }}
     >
       <Grid
         item
         component="img"
         alt="logo"
-        src={isAdmin ? blackLogo : logo}
+        src={isCustomer ? blackLogo : logo}
         sx={{
           height: { xs: "50px", sm: "95px" },
           width: { xs: "30px", sm: "60px" },
@@ -41,8 +41,8 @@ const Header = ({ setIsLoginFormOpen }) => {
           justifyContent: "center",
           height: { xs: "50px", sm: "auto" },
           background: {
-            xs: isAdmin ? "#292929" : "#FBECE0",
-            sm: isAdmin ? "#161616" : "white",
+            xs: isCustomer ? "#292929" : "#FBECE0",
+            sm: isCustomer ? "#161616" : "white",
           },
         }}
         order={{ xs: 1, sm: 2 }}
@@ -53,7 +53,7 @@ const Header = ({ setIsLoginFormOpen }) => {
           sx={{
             fontSize: { sm: "22px", xs: "15px" },
             fontWeight: 500,
-            color: isAdmin && "white",
+            color: isCustomer && "white",
           }}
         >
           Заказчикам
@@ -63,7 +63,7 @@ const Header = ({ setIsLoginFormOpen }) => {
           sx={{
             fontSize: { sm: "22px", xs: "15px" },
             fontWeight: 500,
-            color: isAdmin && "white",
+            color: isCustomer && "white",
           }}
         >
           Владельцам сообществ

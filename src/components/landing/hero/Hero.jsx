@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-import GradientButton from "../buttons/GradientButton";
 import "../../../styles/colors.css";
 import "../../../styles/border.css";
+import GradientButton from "../../UI/buttons/GradientButton";
 
 const Hero = ({ title, content, buttonText, image }) => {
   return (

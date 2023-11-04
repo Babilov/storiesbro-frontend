@@ -1,15 +1,15 @@
 import { useContext } from "react";
 import { Box } from "@mui/material";
 
-import logo from "../../../images/icons/logo.svg";
-import blackLogo from "../../../images/icons/blackLogo.svg";
+import logo from "../../../images/icons/commonIcons/logo.svg";
+import blackLogo from "../../../images/icons/commonIcons/blackLogo.svg";
 
-const FooterImage = ({ isAdmin }) => {
+const FooterImage = ({ isCustomer }) => {
   return (
     <Box
       component="img"
       alt="logo"
-      src={isAdmin ? blackLogo : logo}
+      src={isCustomer ? blackLogo : logo}
       sx={{ mr: 1, width: "50%" }}
     />
   );

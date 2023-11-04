@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-import Scrooge from "../../../images/Scrooge.svg";
-import GradientButton from "../buttons/GradientButton";
+import Scrooge from "../../../images/landingImages/Scrooge.svg";
+import GradientButton from "../../UI/buttons/GradientButton";
 
 const Steps = ({ title, steps, buttonText }) => {
   return (
@@ -20,7 +20,7 @@ const Steps = ({ title, steps, buttonText }) => {
     >
       <Box sx={{ width: "60%" }}>
         <Typography
-          sx={{ fontSize: { sm: "32px", xs: "16px" }, fontWeight: 600, mt: 8 }}
+          sx={{ fontSize: { md: "32px", xs: "16px" }, fontWeight: 600, mt: 8 }}
         >
           {title}
         </Typography>
@@ -28,7 +28,7 @@ const Steps = ({ title, steps, buttonText }) => {
           {steps.map((step, index) => (
             <Typography
               key={index}
-              sx={{ fontSize: { sm: "24px", xs: "14px" }, fontWeight: 400 }}
+              sx={{ fontSize: { md: "24px", xs: "14px" }, fontWeight: 400 }}
             >
               {index + 1}. {step}
             </Typography>

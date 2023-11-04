@@ -3,8 +3,10 @@ import React, { useContext } from "react";
 import { Context } from "../../../context/Context";
 
 const Switcher = () => {
-  const [isAdmin, setIsAdmin] = useContext(Context);
-  return <Switch checked={!isAdmin} onClick={() => setIsAdmin(!isAdmin)} />;
+  const [isCustomer, setIsCustomer] = useContext(Context);
+  return (
+    <Switch checked={!isCustomer} onClick={() => setIsCustomer(!isCustomer)} />
+  );
 };
 
 export default Switcher;

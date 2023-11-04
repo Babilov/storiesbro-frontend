@@ -1,6 +1,7 @@
 import React from "react";
-import MyCarousel from "../myCarousel/MyCarousel";
+
 import { Box, Typography } from "@mui/material";
+import MyCarousel from "../../UI/myCarousel/MyCarousel";
 
 const Examples = () => {
   return (

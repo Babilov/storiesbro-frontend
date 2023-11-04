@@ -3,12 +3,12 @@ import { Box, Typography, Grid } from "@mui/material";
 
 import FooterText from "./FooterText";
 import FooterImage from "./FooterImage";
-import vkBlack from "../../../images/icons/vkBlack.svg";
-import vkWhite from "../../../images/icons/vkWhite.svg";
+import vkBlack from "../../../images/icons/commonIcons/vkBlack.svg";
+import vkWhite from "../../../images/icons/commonIcons/vkWhite.svg";
 import { Context } from "../../../context/Context";
 
 const Footer = () => {
-  const [isAdmin, _] = useContext(Context);
+  const [isCustomer, _] = useContext(Context);
   return (
     <Grid
       container
@@ -25,14 +25,14 @@ const Footer = () => {
         order={{ xs: 1 }}
         sx={{ display: "flex", alignItems: "flex-end" }}
       >
-        <FooterImage isAdmin={isAdmin} />
+        <FooterImage isCustomer={isCustomer} />
       </Grid>
       <Grid order={{ xs: 4, md: 2 }} item md={4} xs={12}>
         <Typography
           sx={{
             fontWeight: 400,
             fontSize: { xs: "10px", sm: "18px" },
-            color: { xs: "#878787", md: "black" },
+            color: { xs: "#878787", md: isCustomer ? "white" : "black" },
             textAlign: "center",
           }}
         >
@@ -63,7 +63,7 @@ const Footer = () => {
         <Box
           component="img"
           alt="vk"
-          src={!isAdmin ? vkWhite : vkBlack}
+          src={isCustomer ? vkWhite : vkBlack}
           sx={{ width: "15%", color: "white" }}
         />
       </Grid>

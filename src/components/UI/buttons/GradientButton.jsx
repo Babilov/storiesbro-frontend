@@ -25,7 +25,7 @@ const GradientButton = ({
         background: disabled && "#CBCBCB",
         transition: ".3s",
         "&:hover": {
-          filter: "brightness(85%)",
+          filter: "brightness(120%)",
           boxShadow: "3px 3px 5px rgba(0, 0, 0, 0.2)",
         },
       }}

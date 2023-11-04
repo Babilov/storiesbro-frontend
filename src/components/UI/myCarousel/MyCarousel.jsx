@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import React from "react";
-import storisImage from "../../../images/storis.svg";
+import storisImage from "../../../images/landingImages/storis.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 

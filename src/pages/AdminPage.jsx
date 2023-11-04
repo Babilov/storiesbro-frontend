@@ -1,72 +1,77 @@
-import { Box, Container, Grid } from "@mui/material";
-import Header from "../components/UI/header/Header";
-import Hero from "../components/UI/hero/Hero";
-import Examples from "../components/UI/examples/Examples";
+import React from "react";
+import { Grid, Container, Box } from "@mui/material";
 
-import hero2 from "../images/hero2.svg";
-import Ford from "../images/Ford.svg";
-import robot from "../images/customerAdvantages/robot.svg";
-import stats from "../images/customerAdvantages/stats.svg";
-import wheel from "../images/customerAdvantages/wheel.svg";
-import help from "../images/customerAdvantages/help.svg";
-import cashBag from "../images/customerAdvantages/cashBag.svg";
-import helpDesk from "../images/customerAdvantages/helpDesk.svg";
-import phone from "../images/customerAdvantages/phone.svg";
-import check from "../images/customerAdvantages/check.svg";
-import Advantages from "../components/UI/advantages/Advantages";
-import Steps from "../components/UI/steps/Steps";
-import FAQ from "../components/landing/faq/FAQ";
-import CallToAction from "../components/UI/callToAction/CallToAction";
-import Footer from "../components/landing/footer/Footer";
 import LoginForm from "../components/UI/modals/LoginForm";
-import Quotation from "../components/landing/quotation/Quotation";
+import Header from "../components/landing/header/Header";
+import Hero from "../components/landing/hero/Hero";
+import Advantages from "../components/landing/advantages/Advantages";
 import Publics from "../components/landing/publics/Publics";
+import Examples from "../components/landing/examples/Examples";
+import Steps from "../components/landing/steps/Steps";
+import FAQ from "../components/landing/faq/FAQ";
+import CallToAction from "../components/landing/callToAction/CallToAction";
+import Footer from "../components/landing/footer/Footer";
+import Quotation from "../components/landing/quotation/Quotation";
 
-const CustomerPage = ({ isLoginFormOpen, setIsLoginFormOpen }) => {
-  const images = {};
-  images[robot] = "Автоматическая публикация историй";
-  images[stats] = "Прозрачная и подробная статистика";
-  images[wheel] = "Простое управление";
-  images[help] = "Помощь с рекламными креативами";
-  images[cashBag] = "Хорошие условия по реферальной программе";
-  images[helpDesk] = "Отзывчивая тех. поддержка 24/7";
-  images[phone] =
-    "Оплата по cpm. Сколько набрало просмотров - столько и оплата";
-  images[check] = "Сотрудничаем только с активными сообществами";
+import BuffetImg from "../images/landingImages/BuffetImg.svg";
+import heroImage from "../images/landingImages/heroImage.svg";
+import bot from "../images/adminAdvantages/bot.svg";
+import cashBag from "../images/adminAdvantages/cashBag.svg";
+import helpDesk from "../images/adminAdvantages/helpDesk.svg";
+import hours from "../images/adminAdvantages/hours.svg";
+import smartphone from "../images/adminAdvantages/smartphone.svg";
+import speeding from "../images/adminAdvantages/speeding.svg";
+import stats from "../images/adminAdvantages/stats.svg";
+import steeringWheel from "../images/adminAdvantages/steeringWheel.svg";
 
+const images = {};
+images[smartphone] =
+  "Все креативы проверяются вручную на соответствие правилам Вконтакте";
+images[stats] = "Прозрачная статистика и доходы";
+images[steeringWheel] = "Простое управление";
+images[speeding] = "Гибкая и оперативная система выплат";
+images[cashBag] = "Хорошие условия по реферальной программе";
+images[helpDesk] = "Отзывчивая тех. поддержка 24/7";
+images[bot] = "Автоматическая публикация историй";
+images[hours] = "Постоянная монетизация сообществ";
+
+const AdminPage = ({ isLoginFormOpen, setIsLoginFormOpen }) => {
   const questions = {
-    "Мой проект можно продвигать у Вас?":
-      "Да, можно. Необходимо соблюдать определенные правила и рекомендации, чтобы не нарушить политику платформы и обеспечить успешное продвижение вашего проекта.",
-    "Как происходит процесс публикации рекламной истории?":
+    "Разрешена ли реклама в историях?":
+      "Да, разрешена. Главное, чтобы рекламные истории соответствовали правилам Вконтакте, поэтому мы проверяем все креативы вручную.",
+    "Могу ли я монетизировать истории при ППВк?":
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "Как можно проверить эффективность креатива?":
+    "Влияет ли реклама в историях  на актив сообщества?":
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "Где рекламируется проект?":
+    "Мои сообщества подойдут?":
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "Как происходит процесс монетизации сообщества?":
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   };
 
   return (
-    <Box sx={{ background: "#161616", color: "white" }}>
+    <>
       <Container>
         <Grid container rowSpacing={2}>
           <LoginForm
             isLoginFormOpen={isLoginFormOpen}
             setIsLoginFormOpen={setIsLoginFormOpen}
           />
+
           <Grid item xs={12}>
             <Header setIsLoginFormOpen={setIsLoginFormOpen} />
           </Grid>
+
           <Grid item xs={12}>
             <Hero
               title={[
-                "Сервис для нативной рекламы",
-                <span className="orange"> Ваших </span>,
-                "проектов в историях Вконтакте",
+                "Сервис для монетизации историй в ",
+                <span className="orange">Ваших</span>,
+                " сообществах",
               ]}
-              content="Продвигайте тг-каналы, ботов, приложения, сообщества
-и другие проекты в 7 раз эффективнее"
-              buttonText="Начать продвижение"
-              image={hero2}
+              content="Получайте дополнительный и пассивный доход с автоматических публикаций нативных историй"
+              buttonText="Повысить доход"
+              image={heroImage}
             />
           </Grid>
 
@@ -76,9 +81,9 @@ const CustomerPage = ({ isLoginFormOpen, setIsLoginFormOpen }) => {
 
           <Grid item xs={12}>
             <Quotation
-              quote="« Я не знаю какой результат принесёт мне реклама, но даже если я заработаю доллар — я вложу его в рекламу»"
-              person="© Генри Форд"
-              image={Ford}
+              quote="«Если ты не найдешь способ зарабатывать деньги, пока ты спишь, то ты будешь работать, пока не умрешь»"
+              person="© Уоррен Баффет"
+              image={BuffetImg}
             />
           </Grid>
 
@@ -92,31 +97,30 @@ const CustomerPage = ({ isLoginFormOpen, setIsLoginFormOpen }) => {
 
           <Grid item xs={12}>
             <Steps
-              title="Всего несколько шагов до трафика"
-              steps={[
-                "Зарегистрируйтесь",
-                "Загрузите рекламный креатив",
-                "Пополните баланс",
-              ]}
-              buttonText="Стать заказчиком"
+              title="Всего несколько шагов до монетизации"
+              steps={["Зарегистрируйтесь", "Подключите сообщества"]}
+              buttonText="Начать зарабатывать"
             />
           </Grid>
 
           <Grid item xs={12} md={8} sx={{ m: "0 auto" }}>
-            <FAQ questions={questions} background="#161616" color="white" />
+            <FAQ questions={questions} />
           </Grid>
+        </Grid>
+      </Container>
 
-          <Grid item xs={11} md={7} sx={{ m: "0 auto" }}>
-            <CallToAction background="#E37E31" />
-          </Grid>
-
+      <Box sx={{ m: "0 auto" }}>
+        <CallToAction background="#FBECE0" />
+      </Box>
+      <Container>
+        <Grid container>
           <Grid item xs={12}>
             <Footer />
           </Grid>
         </Grid>
       </Container>
-    </Box>
+    </>
   );
 };
 
-export default CustomerPage;
+export default AdminPage;
