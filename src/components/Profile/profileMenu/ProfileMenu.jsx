@@ -7,7 +7,7 @@ import PaymentsIcon from "@mui/icons-material/Payments";
 import LockIcon from "@mui/icons-material/Lock";
 import SettingsIcon from "@mui/icons-material/Settings";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import "./styles/profileStyle.css";
+import "../styles/profileStyle.css";
 
 const ProfileMenu = () => {
   return (

@@ -6,11 +6,11 @@ import { Context } from "./context/Context";
 import AdminPage from "./pages/AdminPage";
 import CustomerPage from "./pages/CustomerPage";
 import Profile from "./pages/Profile";
-import ProfileData from "./components/Profile/ProfileData";
-import ProfileCash from "./components/Profile/ProfileCash";
-import ProfilePassword from "./components/Profile/ProfilePassword";
-import ProfileAlerts from "./components/Profile/ProfileAlerts";
-import ProfileHistory from "./components/Profile/ProfileHistory";
+import ProfileData from "./components/Profile/profileData/ProfileData";
+import ProfileCash from "./components/Profile/profileCash/ProfileCash";
+import ProfilePassword from "./components/Profile/profilePassword/ProfilePassword";
+import ProfileAlerts from "./components/Profile/profileAlerts/ProfileAlerts";
+import ProfileHistory from "./components/Profile/profileHistory/ProfileHistory";
 
 function App() {
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
@@ -38,7 +38,7 @@ function App() {
         <Route
           path="/profile"
           element={
-            <Profile>
+            <Profile title="Настройка профиля">
               <ProfileData />
             </Profile>
           }
@@ -47,7 +47,7 @@ function App() {
         <Route
           path="/cash"
           element={
-            <Profile>
+            <Profile title="Настройка профиля">
               <ProfileCash />
             </Profile>
           }
@@ -56,7 +56,7 @@ function App() {
         <Route
           path="/password"
           element={
-            <Profile>
+            <Profile title="Пароль">
               <ProfilePassword />
             </Profile>
           }
@@ -65,7 +65,7 @@ function App() {
         <Route
           path="/alerts"
           element={
-            <Profile>
+            <Profile title="Настройка уведомлений">
               <ProfileAlerts />
             </Profile>
           }
@@ -74,7 +74,7 @@ function App() {
         <Route
           path="/history"
           element={
-            <Profile>
+            <Profile title="История уведомлений">
               <ProfileHistory />
             </Profile>
           }

@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
-import OrangeButton from "../UI/buttons/OrangeButton";
-import logo from "../../images/icons/commonIcons/logo.svg";
-import humanProfile from "../../images/icons/humanProfile.svg";
-import SideBar from "../UI/sidebars/SideBar";
+import logo from "../../../images/icons/commonIcons/logo.svg";
+import humanProfile from "../../../images/icons/humanProfile.svg";
+import MyButton from "../../UI/buttons/MyButton";
 
 const ProfileHeader = () => {
   const [open, setOpen] = useState(false);
@@ -14,7 +13,6 @@ const ProfileHeader = () => {
     <Box
       sx={{ display: "flex", justifyContent: "space-between", p: "0 130px" }}
     >
-      <SideBar open={open} setOpen={setOpen} />
       <Box sx={{ display: "flex", alignItems: "center" }}>
         <MenuIcon sx={{ mr: 5, cursor: "pointer" }} />
         <Box component="img" alt="logo" src={logo} />
@@ -27,7 +25,9 @@ const ProfileHeader = () => {
           width: "15%",
         }}
       >
-        <OrangeButton>Пополнить</OrangeButton>
+        <MyButton options={{ background: "#E68B46", color: "white", mr: 1 }}>
+          Пополнить
+        </MyButton>
         <Box>0р</Box>
         <Box component="img" alt="prfile" src={humanProfile} />
       </Box>
