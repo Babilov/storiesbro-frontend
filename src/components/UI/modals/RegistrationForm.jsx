@@ -30,6 +30,8 @@ const RegistrationForm = ({
 
   const [isChecked, setIsChecked] = useState(false);
   const [isEmailConfirm, setIsEmailConfirm] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <>
       <EmailConfirmationForm
@@ -40,10 +42,14 @@ const RegistrationForm = ({
         title="Регистрация"
         isFormOpen={isRegistrationForm}
         setIsFormOpen={handleCloseRegistration}
-        hasHandle={true}
       >
-        <MyInput label="Введите почту" />
-        <MyInput label="Прилдумайте пароль" isPassword={true} />
+        <MyInput label="Введите почту" value={email} setValue={setEmail} />
+        <MyInput
+          label="Прилдумайте пароль"
+          isPassword={true}
+          value={password}
+          setValue={setPassword}
+        />
         <FormControlLabel
           control={<Checkbox />}
           label={

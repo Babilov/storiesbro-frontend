@@ -1,11 +1,11 @@
 import React from "react";
 import { Box, Modal, Typography } from "@mui/material";
 
-const MyModal = ({ children, title, isFormOpen, setIsFormOpen, hasHandle }) => {
+const MyModal = ({ children, title, titleFont, isFormOpen, setIsFormOpen }) => {
   return (
     <Modal
       open={isFormOpen}
-      onClose={hasHandle ? () => setIsFormOpen() : () => setIsFormOpen(false)}
+      onClose={setIsFormOpen}
       sx={{
         width: "30%",
         m: "0 auto",
@@ -30,7 +30,7 @@ const MyModal = ({ children, title, isFormOpen, setIsFormOpen, hasHandle }) => {
             mt: 2,
             textAlign: "center",
             fontWeight: 600,
-            fontSize: "38px",
+            fontSize: titleFont ? titleFont : "38px",
           }}
         >
           {title}

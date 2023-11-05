@@ -1,5 +1,5 @@
 import { Box, Link, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import ErrorMessage from "../errors/ErrorMessage";
 import GradientButton from "../buttons/GradientButton";
 import VkEnter from "../buttons/VkEnter";
@@ -11,11 +11,17 @@ const LoginFormInfo = ({
   handleRegistrationForm,
 }) => {
   const error = true;
-
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <>
-      <MyInput label="Введите почту" />
-      <MyInput label="Введите пароль" isPassword={true} />
+      <MyInput label="Введите почту" value={email} setValue={setEmail} />
+      <MyInput
+        label="Введите пароль"
+        isPassword={true}
+        value={password}
+        setValue={setPassword}
+      />
       <ErrorMessage
         error={error}
         errorMessage="*опа, ошибка в логине, либо в пароле"

@@ -51,7 +51,7 @@ const LoginForm = ({ isLoginFormOpen, setIsLoginFormOpen }) => {
       <MyModal
         title="Вход"
         isFormOpen={isLoginFormOpen}
-        setIsFormOpen={setIsLoginFormOpen}
+        setIsFormOpen={() => setIsLoginFormOpen(false)}
       >
         <LoginFormInfo
           handleConfirmForm={handleConfirmForm}
