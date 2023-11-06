@@ -1,9 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React, { useState } from "react";
 import MyInput from "../../UI/input/MyInput";
-import OrangeButton from "../../UI/buttons/OrangeButton";
-import OrangeBorderButton from "../../UI/buttons/OrangeBorderButton";
-import MyButton from "../../UI/buttons/MyButton";
+import ProfileCashButton from "./ProfileCashButton";
 
 const ProfileCash = () => {
   const [cash, setCash] = useState(0);
@@ -20,22 +18,23 @@ const ProfileCash = () => {
         <Typography sx={{ fontWeight: 600, fontSize: "18px", mr: 2 }}>
           Баланс
         </Typography>
-        <MyInput value={cash} setValue={setCash} />
+        <MyInput value={cash} disabled={true} />
         <Typography sx={{ fontWeight: 600, fontSize: "20px" }}>₽</Typography>
       </Box>
       <Box sx={{ mr: 20, display: "flex", width: "40%" }}>
-        <MyButton options={{ background: "#E68B46", color: "white", mr: 1 }}>
-          Пополнить
-        </MyButton>
-        <MyButton
-          options={{
-            background: "white",
-            color: "#E68B46",
-            border: "1px solid #E68B46",
-          }}
-        >
-          Вывести
-        </MyButton>
+        <ProfileCashButton
+          to="/cash/deposit"
+          text="Пополнить"
+          background="#E68B46"
+          color="white"
+        />
+        <ProfileCashButton
+          to="/cash/get-money"
+          text="Вывести"
+          background="white"
+          color="#E68B46"
+          border="1px solid #E68B46"
+        />
       </Box>
     </Box>
   );

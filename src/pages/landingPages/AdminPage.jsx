@@ -1,28 +1,28 @@
 import React from "react";
 import { Grid, Container, Box } from "@mui/material";
 
-import LoginForm from "../components/UI/modals/LoginForm";
-import Header from "../components/landing/header/Header";
-import Hero from "../components/landing/hero/Hero";
-import Advantages from "../components/landing/advantages/Advantages";
-import Publics from "../components/landing/publics/Publics";
-import Examples from "../components/landing/examples/Examples";
-import Steps from "../components/landing/steps/Steps";
-import FAQ from "../components/landing/faq/FAQ";
-import CallToAction from "../components/landing/callToAction/CallToAction";
-import Footer from "../components/landing/footer/Footer";
-import Quotation from "../components/landing/quotation/Quotation";
+import LoginForm from "../../components/UI/modals/LoginForm";
+import Header from "../../components/landing/header/Header";
+import Hero from "../../components/landing/hero/Hero";
+import Advantages from "../../components/landing/advantages/Advantages";
+import Publics from "../../components/landing/publics/Publics";
+import Examples from "../../components/landing/examples/Examples";
+import Steps from "../../components/landing/steps/Steps";
+import FAQ from "../../components/landing/faq/FAQ";
+import CallToAction from "../../components/landing/callToAction/CallToAction";
+import Footer from "../../components/landing/footer/Footer";
+import Quotation from "../../components/landing/quotation/Quotation";
 
-import BuffetImg from "../images/landingImages/BuffetImg.svg";
-import heroImage from "../images/landingImages/heroImage.svg";
-import bot from "../images/adminAdvantages/bot.svg";
-import cashBag from "../images/adminAdvantages/cashBag.svg";
-import helpDesk from "../images/adminAdvantages/helpDesk.svg";
-import hours from "../images/adminAdvantages/hours.svg";
-import smartphone from "../images/adminAdvantages/smartphone.svg";
-import speeding from "../images/adminAdvantages/speeding.svg";
-import stats from "../images/adminAdvantages/stats.svg";
-import steeringWheel from "../images/adminAdvantages/steeringWheel.svg";
+import BuffetImg from "../../images/landingImages/BuffetImg.svg";
+import heroImage from "../../images/landingImages/heroImage.svg";
+import bot from "../../images/adminAdvantages/bot.svg";
+import cashBag from "../../images/adminAdvantages/cashBag.svg";
+import helpDesk from "../../images/adminAdvantages/helpDesk.svg";
+import hours from "../../images/adminAdvantages/hours.svg";
+import smartphone from "../../images/adminAdvantages/smartphone.svg";
+import speeding from "../../images/adminAdvantages/speeding.svg";
+import stats from "../../images/adminAdvantages/stats.svg";
+import steeringWheel from "../../images/adminAdvantages/steeringWheel.svg";
 
 const images = {};
 images[smartphone] =

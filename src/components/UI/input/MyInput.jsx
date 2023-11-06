@@ -1,7 +1,15 @@
 import { TextField } from "@mui/material";
 import React from "react";
 
-const MyInput = ({ label, isPassword, value, setValue, disabled }) => {
+const MyInput = ({
+  label,
+  isPassword,
+  value,
+  setValue,
+  disabled,
+  onClick,
+  onBlur,
+}) => {
   return (
     <TextField
       type={isPassword && "password"}
@@ -9,6 +17,8 @@ const MyInput = ({ label, isPassword, value, setValue, disabled }) => {
       disabled={disabled}
       value={value}
       onChange={(e) => setValue(e.target.value)}
+      onClick={onClick}
+      onBlur={onBlur}
       variant="outlined"
       label={label}
       sx={{ mb: 1 }}

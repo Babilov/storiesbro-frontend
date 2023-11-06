@@ -1,13 +1,20 @@
 import React from "react";
 import { Box, Modal, Typography } from "@mui/material";
 
-const MyModal = ({ children, title, titleFont, isFormOpen, setIsFormOpen }) => {
+const MyModal = ({
+  children,
+  width = "30%",
+  title,
+  titleFont,
+  isFormOpen,
+  setIsFormOpen,
+}) => {
   return (
     <Modal
       open={isFormOpen}
       onClose={setIsFormOpen}
       sx={{
-        width: "30%",
+        width: width,
         m: "0 auto",
         display: "flex",
         justifyContent: "center",

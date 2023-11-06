@@ -3,14 +3,19 @@ import { Route, Routes } from "react-router-dom";
 
 import "./styles/App.css";
 import { Context } from "./context/Context";
-import AdminPage from "./pages/AdminPage";
-import CustomerPage from "./pages/CustomerPage";
-import Profile from "./pages/Profile";
+import AdminPage from "./pages/landingPages/AdminPage";
+import CustomerPage from "./pages/landingPages/CustomerPage";
+import Profile from "./pages/profilePages/Profile";
 import ProfileData from "./components/Profile/profileData/ProfileData";
 import ProfileCash from "./components/Profile/profileCash/ProfileCash";
 import ProfilePassword from "./components/Profile/profilePassword/ProfilePassword";
 import ProfileAlerts from "./components/Profile/profileAlerts/ProfileAlerts";
 import ProfileHistory from "./components/Profile/profileHistory/ProfileHistory";
+import Deposit from "./pages/profilePages/Deposit";
+import GetMoney from "./pages/profilePages/GetMoney";
+import CashPattern from "./pages/patterns/CashPattern";
+import ChangePassword from "./components/Profile/profilePassword/ChangePassword";
+import LowComission from "./pages/profilePages/LowComission";
 
 function App() {
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
@@ -54,10 +59,39 @@ function App() {
         />
 
         <Route
+          path="/cash/deposit"
+          element={
+            <CashPattern isDeposit={true} title="Пополние">
+              <Deposit />
+            </CashPattern>
+          }
+        />
+
+        <Route
+          path="/cash/get-money"
+          element={
+            <CashPattern title="Вывод">
+              <GetMoney />
+            </CashPattern>
+          }
+        />
+
+        <Route path="/cash/low-comission" element={<LowComission />} />
+
+        <Route
           path="/password"
           element={
             <Profile title="Пароль">
               <ProfilePassword />
+            </Profile>
+          }
+        />
+
+        <Route
+          path="/password/change-password"
+          element={
+            <Profile title="Новый пароль">
+              <ChangePassword />
             </Profile>
           }
         />

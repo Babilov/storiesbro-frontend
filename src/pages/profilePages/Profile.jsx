@@ -1,7 +1,7 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import ProfileHeader from "../components/Profile/profileHeader/ProfileHeader";
-import ProfileMenu from "../components/Profile/profileMenu/ProfileMenu";
+import ProfileHeader from "../../components/Profile/profileHeader/ProfileHeader";
+import ProfileMenu from "../../components/Profile/profileMenu/ProfileMenu";
 
 const Profile = ({ children, title }) => {
   return (

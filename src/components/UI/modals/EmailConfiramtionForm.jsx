@@ -16,7 +16,7 @@ const EmailConfirmationForm = ({ isEmailConfirm, setIsEmailConfirm }) => {
       isFormOpen={isEmailConfirm}
       setIsFormOpen={() => setIsEmailConfirm(false)}
     >
-      <Typography>
+      <Typography sx={{ textAlign: "center" }}>
         Код для активации аккаунта отправили на почту gusgausa@gmail.com
       </Typography>
       <MyInput label="Введите код" value={code} setValue={setCode} />

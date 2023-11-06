@@ -1,27 +1,27 @@
 import { Box, Container, Grid } from "@mui/material";
 
-import LoginForm from "../components/UI/modals/LoginForm";
-import Header from "../components/landing/header/Header";
-import Hero from "../components/landing/hero/Hero";
-import Advantages from "../components/landing/advantages/Advantages";
-import Publics from "../components/landing/publics/Publics";
-import Examples from "../components/landing/examples/Examples";
-import Steps from "../components/landing/steps/Steps";
-import FAQ from "../components/landing/faq/FAQ";
-import CallToAction from "../components/landing/callToAction/CallToAction";
-import Footer from "../components/landing/footer/Footer";
-import Quotation from "../components/landing/quotation/Quotation";
+import LoginForm from "../../components/UI/modals/LoginForm";
+import Header from "../../components/landing/header/Header";
+import Hero from "../../components/landing/hero/Hero";
+import Advantages from "../../components/landing/advantages/Advantages";
+import Publics from "../../components/landing/publics/Publics";
+import Examples from "../../components/landing/examples/Examples";
+import Steps from "../../components/landing/steps/Steps";
+import FAQ from "../../components/landing/faq/FAQ";
+import CallToAction from "../../components/landing/callToAction/CallToAction";
+import Footer from "../../components/landing/footer/Footer";
+import Quotation from "../../components/landing/quotation/Quotation";
 
-import hero2 from "../images/landingImages/hero2.svg";
-import Ford from "../images/landingImages/Ford.svg";
-import robot from "../images/customerAdvantages/robot.svg";
-import stats from "../images/customerAdvantages/stats.svg";
-import wheel from "../images/customerAdvantages/wheel.svg";
-import help from "../images/customerAdvantages/help.svg";
-import cashBag from "../images/customerAdvantages/cashBag.svg";
-import helpDesk from "../images/customerAdvantages/helpDesk.svg";
-import phone from "../images/customerAdvantages/phone.svg";
-import check from "../images/customerAdvantages/check.svg";
+import hero2 from "../../images/landingImages/hero2.svg";
+import Ford from "../../images/landingImages/Ford.svg";
+import robot from "../../images/customerAdvantages/robot.svg";
+import stats from "../../images/customerAdvantages/stats.svg";
+import wheel from "../../images/customerAdvantages/wheel.svg";
+import help from "../../images/customerAdvantages/help.svg";
+import cashBag from "../../images/customerAdvantages/cashBag.svg";
+import helpDesk from "../../images/customerAdvantages/helpDesk.svg";
+import phone from "../../images/customerAdvantages/phone.svg";
+import check from "../../images/customerAdvantages/check.svg";
 
 const CustomerPage = ({ isLoginFormOpen, setIsLoginFormOpen }) => {
   const images = {};
