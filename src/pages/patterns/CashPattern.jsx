@@ -22,11 +22,19 @@ const CashPattern = ({ children, isDeposit, title }) => {
     >
       <ProfileHeader />
       <Container>
-        <Typography variant="h3" sx={{ textAlign: "center", mb: 3 }}>
+        <Typography
+          variant="h3"
+          sx={{
+            textAlign: "center",
+            mb: 3,
+            fontSize: { md: "32px", xs: "24px" },
+            fontWeight: 600,
+          }}
+        >
           {title}
         </Typography>
         <DepositMenu isDeposit={isDeposit} />
-        <Box>{children}</Box>
+        {children}
       </Container>
     </CashContext.Provider>
   );

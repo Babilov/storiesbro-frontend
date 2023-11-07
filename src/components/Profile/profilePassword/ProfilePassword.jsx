@@ -8,14 +8,14 @@ import { Link } from "react-router-dom";
 const ProfilePassword = () => {
   const date = "17:30 05.06.2023";
   return (
-    <Box sx={{ width: "50%" }}>
+    <Box sx={{ width: { sm: "50%", xs: "80%" }, m: { xs: "0 auto", lg: 0 } }}>
       <Box
         sx={{
           border: "1px solid #CBCBCB",
           borderRadius: "10px",
           display: "flex",
           alignItems: "self-start",
-          p: "15px 180px 15px 15px",
+          p: { lg: "15px 180px 15px 15px", xs: "15px" },
         }}
       >
         <Box component="img" alt="check" src={check} sx={{ mr: 3 }} />

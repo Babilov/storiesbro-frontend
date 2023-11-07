@@ -19,7 +19,7 @@ const ChangePassword = () => {
   const [emailConfirmation, setEmailConfirmation] = useState(false);
   const [error, setError] = useState(false);
   return (
-    <Box sx={{ width: "50%" }}>
+    <Box sx={{ width: "50%", m: { lg: 0, xs: "0 auto" } }}>
       <EmailConfiramtionFormModal
         open={emailConfirmation}
         setOpen={setEmailConfirmation}
@@ -37,7 +37,7 @@ const ChangePassword = () => {
         isPassword={true}
       />
       <ErrorMessage error={error} errorMessage="* Пароли не совпадают" />
-      <Box sx={{ width: "50%", mt: 1 }}>
+      <Box sx={{ width: "50%", m: { lg: "5px 0 0", xs: "5px auto" } }}>
         <MyButton
           onClick={handleClick}
           options={{ background: "#4CD640", color: "white" }}

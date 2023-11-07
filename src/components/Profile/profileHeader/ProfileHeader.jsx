@@ -11,24 +11,41 @@ const ProfileHeader = () => {
 
   return (
     <Box
-      sx={{ display: "flex", justifyContent: "space-between", p: "0 130px" }}
+      sx={{
+        display: "flex",
+        justifyContent: "space-between",
+        p: { md: "0 130px", xs: 0 },
+      }}
     >
       <Box sx={{ display: "flex", alignItems: "center" }}>
-        <MenuIcon sx={{ mr: 5, cursor: "pointer" }} />
-        <Box component="img" alt="logo" src={logo} />
+        <MenuIcon sx={{ mr: { md: 5, xs: 0 }, cursor: "pointer" }} />
+        <Box
+          component="img"
+          alt="logo"
+          src={logo}
+          sx={{ display: { lg: "block", xs: "none" } }}
+        />
       </Box>
+      <Box
+        component="img"
+        alt="logo"
+        src={logo}
+        sx={{ display: { xs: "block", lg: "none" } }}
+      />
       <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          width: "15%",
+          width: { md: "15%", xs: "fit-content" },
         }}
       >
-        <MyButton options={{ background: "#E68B46", color: "white", mr: 1 }}>
-          Пополнить
-        </MyButton>
-        <Box>0р</Box>
+        <Box sx={{ width: "70%", display: { lg: "block", xs: "none" } }}>
+          <MyButton options={{ background: "#E68B46", color: "white", mr: 1 }}>
+            Пополнить
+          </MyButton>
+        </Box>
+        <Box sx={{ display: { lg: "block", xs: "none" } }}>0р</Box>
         <Box component="img" alt="prfile" src={humanProfile} />
       </Box>
     </Box>

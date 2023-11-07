@@ -35,58 +35,68 @@ const ProfileHistory = () => {
   };
 
   return (
-    <Box sx={{ width: "80%" }}>
+    <Box sx={{ width: "80%", m: { xs: "0 auto", lg: 0 } }}>
       {alerts.map((alert) => (
-        <Box
-          key={alert["id"]}
-          sx={{
-            border: "1px solid #CBCBCB",
-            borderRadius: "10px",
-            mb: 2,
-            p: "10px 30px 10px 10px",
-          }}
-        >
+        <Box key={alert["id"]}>
           <Comment
             id={alert["id"]}
             buttonId={buttonId}
             comment={alert["comment"]}
             isFormOpen={isFormOpen}
-            setIsFormOpen={setIsFormOpen}
+            setIsFormOpen={() => setIsFormOpen(false)}
           />
-          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-            <Box sx={{ display: "flex", alignItems: "flex-start" }}>
-              <Box
-                component="img"
-                alt="confirm"
-                src={alert["isConfirmed"] ? check : cross}
-                sx={{ mt: 0.5, mr: 1 }}
-              />
 
-              <Box>
-                <Typography sx={{ fontSize: "18px", fontWeight: 500 }}>
-                  {alert["type"]}
-                </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "flex-start",
+              border: "1px solid #CBCBCB",
+              borderRadius: "10px",
+              mb: 2,
+              p: 1,
+            }}
+          >
+            <Box
+              component="img"
+              alt="confirm"
+              src={alert["isConfirmed"] ? check : cross}
+              sx={{ mt: 0.5, mr: 1 }}
+            />
 
-                <Typography sx={{ fontSize: "14px", fontWeight: 400 }}>
-                  {alert["content"]}
-                </Typography>
+            <Box sx={{ position: "relative", width: "100%" }}>
+              <Typography
+                sx={{ fontSize: { md: "18px", xs: "14px" }, fontWeight: 500 }}
+              >
+                {alert["type"]}
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: { md: "14px", xs: "12px" },
+                  fontWeight: 400,
+                  position: "absolute",
+                  top: 0,
+                  right: 0,
+                }}
+              >
+                {alert["date"]}
+              </Typography>
+              <Typography
+                sx={{ fontSize: { md: "14px", xs: "12px" }, fontWeight: 400 }}
+              >
+                {alert["content"]}
+              </Typography>
 
-                {alert["comment"] && (
-                  <Box sx={{ mt: 2, width: "25%" }}>
-                    <MyButton
-                      onClick={() => handleClick(alert["id"])}
-                      options={{ background: "#E37E31", color: "white" }}
-                    >
-                      Комментарий
-                    </MyButton>
-                  </Box>
-                )}
-              </Box>
+              {alert["comment"] && (
+                <Box sx={{ mt: 2, width: { md: "25%", sm: "50%", xs: "80%" } }}>
+                  <MyButton
+                    onClick={() => handleClick(alert["id"])}
+                    options={{ background: "#E37E31", color: "white" }}
+                  >
+                    Комментарий
+                  </MyButton>
+                </Box>
+              )}
             </Box>
-
-            <Typography sx={{ fontSize: "14px", fontWeight: 400 }}>
-              {alert["date"]}
-            </Typography>
           </Box>
         </Box>
       ))}

@@ -1,6 +1,9 @@
 import { Divider, Grid, Typography } from "@mui/material";
 import React from "react";
 
+import "./deposit.css";
+import MobileTable from "./MobileTable";
+
 const DepositeTable = ({ operations }) => {
   return (
     <Grid
@@ -12,6 +15,7 @@ const DepositeTable = ({ operations }) => {
         pl: 3,
         pr: 3,
         pt: 1,
+        display: { md: "flex", xs: "none" },
       }}
     >
       <Grid item xs={5}>

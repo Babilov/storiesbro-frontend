@@ -3,6 +3,8 @@ import { CashContext } from "../../components/Profile/profileCash/CashContext";
 import ComissionModal from "../../components/Profile/profileCash/CashModals/ComissonModal";
 import CashError from "../../components/Profile/profileCash/CashModals/CashError";
 import DepositTable from "../../components/Profile/profileCash/deposit/DepositTable";
+import MobileTable from "../../components/Profile/profileCash/deposit/MobileTable";
+import CashConfirmationModal from "../../components/Profile/profileCash/CashModals/CashConfirmationModal";
 
 const Deposit = () => {
   const operations = [
@@ -26,14 +28,22 @@ const Deposit = () => {
     },
   ];
 
-  const [comissionOpen, setComissionOpen, errorModalOpen, setErrorModalOpen] =
-    useContext(CashContext);
+  const [
+    comissionOpen,
+    setComissionOpen,
+    errorModalOpen,
+    setErrorModalOpen,
+    codeModal,
+    setCodeModal,
+  ] = useContext(CashContext);
   const error = true;
   return (
     <>
       <ComissionModal open={comissionOpen} setOpen={setComissionOpen} />
+      <CashConfirmationModal open={codeModal} setOpen={setCodeModal} />
       <CashError open={errorModalOpen && error} setOpen={setErrorModalOpen} />
       <DepositTable operations={operations} />
+      <MobileTable operations={operations} />
     </>
   );
 };

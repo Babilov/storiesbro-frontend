@@ -49,6 +49,7 @@ const ProfileDataModal = ({
       <MyModal
         title="Подтверждение"
         titleFont="18px"
+        width={{ xs: "90%", md: "50%", lg: "30%" }}
         isFormOpen={modalOpen}
         setIsFormOpen={handleClose}
       >

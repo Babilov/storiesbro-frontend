@@ -12,6 +12,7 @@ const ProfileCash = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
+        flexDirection: { xs: "column", lg: "row" },
       }}
     >
       <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -21,7 +22,13 @@ const ProfileCash = () => {
         <MyInput value={cash} disabled={true} />
         <Typography sx={{ fontWeight: 600, fontSize: "20px" }}>₽</Typography>
       </Box>
-      <Box sx={{ mr: 20, display: "flex", width: "40%" }}>
+      <Box
+        sx={{
+          m: { lg: "0 160px 0 0", xs: "0 auto" },
+          display: "flex",
+          width: { lg: "40%", md: "60%", xs: "80%" },
+        }}
+      >
         <ProfileCashButton
           to="/cash/deposit"
           text="Пополнить"

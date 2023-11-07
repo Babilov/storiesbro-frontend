@@ -9,6 +9,7 @@ const RightCodeModal = ({ newEmail, modalOpen, setModalOpen }) => {
   return (
     <MyModal
       title={<img src={smile} />}
+      width={{ xs: "90%", md: "50%", lg: "30%" }}
       isFormOpen={modalOpen}
       setIsFormOpen={setModalOpen}
     >

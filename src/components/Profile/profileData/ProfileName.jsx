@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import pencil from "../../../images/profileImages/dataIcons/pencil.svg";
 import MyInput from "../../UI/input/MyInput";
 
-const ProfileNmae = () => {
+const ProfileName = () => {
   const [name, setName] = useState("Юрий");
   const [isEdit, setIsEdit] = useState(false);
   return (
@@ -38,4 +38,4 @@ const ProfileNmae = () => {
   );
 };
 
-export default ProfileNmae;
+export default ProfileName;

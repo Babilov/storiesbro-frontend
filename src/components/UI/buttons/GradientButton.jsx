@@ -17,10 +17,10 @@ const GradientButton = ({
       className="orangeGradient"
       sx={{
         width: { sm: width, xs: xsWidth },
-        height: { sx: "50px", sm: "72px" },
+        height: { sx: "50px", md: "72px" },
         borderRadius: "90px",
         color: "white",
-        fontSize: { xs: "16px", sm: "26px" },
+        fontSize: { xs: "16px", md: "26px" },
         fontWeight: 600,
         background: disabled && "#CBCBCB",
         transition: ".3s",

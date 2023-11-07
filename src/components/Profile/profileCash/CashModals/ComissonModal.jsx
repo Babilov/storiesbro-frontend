@@ -5,7 +5,11 @@ import MyButton from "../../../UI/buttons/MyButton";
 
 const ComissionModal = ({ open, setOpen }) => {
   return (
-    <MyModal isFormOpen={open} setIsFormOpen={() => setOpen(false)} width="50%">
+    <MyModal
+      width={{ xs: "90%", md: "50%", lg: "30%" }}
+      isFormOpen={open}
+      setIsFormOpen={() => setOpen(false)}
+    >
       <Box>
         <Typography sx={{ textAlign: "center", fontSize: "18px" }}>
           Для поддержания высокого уровня сервиса мы взимаем сервисный сбор в

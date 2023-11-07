@@ -6,6 +6,7 @@ const Comment = ({ id, buttonId, comment, isFormOpen, setIsFormOpen }) => {
   return (
     <MyModal
       title="Комментарий"
+      width={{ xs: "90%", md: "50%", lg: "30%" }}
       isFormOpen={isFormOpen && id === buttonId}
       setIsFormOpen={setIsFormOpen}
     >

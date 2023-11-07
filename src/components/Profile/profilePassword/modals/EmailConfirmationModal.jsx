@@ -27,7 +27,7 @@ const EmailConfiramtionFormModal = ({ open, setOpen }) => {
   const rightCode = "1111";
   return (
     <MyModal
-      width="50%"
+      width={{ xs: "90%", md: "50%", lg: "30%" }}
       title="Подтверждение"
       isFormOpen={open}
       setIsFormOpen={handleClose}
@@ -36,7 +36,7 @@ const EmailConfiramtionFormModal = ({ open, setOpen }) => {
         Для изменения пароля, введите код, отправленный на почту
         gausaaa@gmail.com
       </Typography>
-      <Box sx={{ width: "35%", m: "20px auto" }}>
+      <Box sx={{ width: "50%", m: "20px auto" }}>
         <MyInput label="Введите код" value={code} setValue={setCode} />
         <ErrorMessage error={error} errorMessage="* Неверный код" />
         <MyButton

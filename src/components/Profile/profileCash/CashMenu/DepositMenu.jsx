@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
 import DepositSelect from "./DepositSelect";
 import MyInput from "../../../UI/input/MyInput";
@@ -27,59 +27,64 @@ const DepositMenu = ({ isDeposit }) => {
   const newRequisites = true;
 
   return (
-    <Box>
-      <Box
-        sx={{
-          width: "75%",
-          m: "0 auto",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
+    <Grid
+      container
+      columnSpacing={3}
+      sx={{
+        width: { md: "75%", xs: "100%" },
+        m: "20px auto",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+      }}
+    >
+      <Grid
+        item
+        md={isDeposit ? 4 : 3}
+        xs={12}
+        sx={{ display: "flex", alignItems: "center" }}
       >
-        <Box sx={{ width: "25%", display: "flex", alignItems: "center" }}>
-          <MyInput
-            label="Введите сумму"
-            value={cash}
-            setValue={setCash}
-            onClick={() => cash === 0 && setCash("")}
-          />
-          <Typography>₽</Typography>
-        </Box>
-        {isDeposit ? (
-          <DepositSelect />
-        ) : (
-          <Box sx={{ width: "25%" }}>
-            <MyInput
-              label="Введите реквизиты"
-              value={requisites}
-              setValue={setRequisites}
-            />
-          </Box>
-        )}
-        <Comission
-          setComissionOpen={setComissionModalOpen}
-          isDeposit={isDeposit}
+        <MyInput
+          label="Введите сумму"
+          value={cash}
+          setValue={setCash}
+          onClick={() => cash === 0 && setCash("")}
         />
-        {!isDeposit && (
-          <Box sx={{ width: "25%" }}>
-            <Link to="/cash/low-comission">
-              <MyButton options={{ background: "#4CD640", color: "white" }}>
-                Хочу уменьшить
-              </MyButton>
-            </Link>
-          </Box>
-        )}
-      </Box>
-      <Box sx={{ width: "18%", m: "30px auto" }}>
+        <Typography>₽</Typography>
+      </Grid>
+      {isDeposit ? (
+        <DepositSelect />
+      ) : (
+        <Grid item md={isDeposit ? 4 : 3} xs={12}>
+          <MyInput
+            label="Введите реквизиты"
+            value={requisites}
+            setValue={setRequisites}
+          />
+        </Grid>
+      )}
+      <Comission
+        setComissionOpen={setComissionModalOpen}
+        isDeposit={isDeposit}
+      />
+      {!isDeposit && (
+        <Grid item md={isDeposit ? 4 : 2.5} xs={6}>
+          <Link to="/cash/low-comission">
+            <MyButton options={{ background: "#4CD640", color: "white" }}>
+              Хочу уменьшить
+            </MyButton>
+          </Link>
+        </Grid>
+      )}
+      <Grid item xs={4} sx={{ m: { xs: "20px auto", minWidth: "130px" } }}>
         <MyButton
           onClick={handleClick}
           options={{ background: "#E37E31", color: "white" }}
         >
           {isDeposit ? "Пополнить" : "Вывести"}
         </MyButton>
-      </Box>
-    </Box>
+      </Grid>
+    </Grid>
   );
 };
 

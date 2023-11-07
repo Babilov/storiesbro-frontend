@@ -5,7 +5,7 @@ import "./styles/App.css";
 import { Context } from "./context/Context";
 import AdminPage from "./pages/landingPages/AdminPage";
 import CustomerPage from "./pages/landingPages/CustomerPage";
-import Profile from "./pages/profilePages/Profile";
+import Profile from "./pages/patterns/ProfilePattern";
 import ProfileData from "./components/Profile/profileData/ProfileData";
 import ProfileCash from "./components/Profile/profileCash/ProfileCash";
 import ProfilePassword from "./components/Profile/profilePassword/ProfilePassword";

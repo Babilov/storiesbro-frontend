@@ -1,81 +1,49 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 
-import comissionLogo from "./images/comissionLogo.svg";
-import comissionNoAvatar from "./images/comissionNoAvatar.svg";
-import comissionCheck from "./images/comissionCheck.svg";
-import comissionCross from "./images/comissionCross.svg";
+import copy from "./images/copy.svg";
+import ProfileLinks from "./ProfileLinks";
+import ProfileSteps from "./ProfileSteps";
 
 const ProfileLowComission = () => {
+  const refUrl = "Storisbro.com/?_ref=2Rh46f3L";
   return (
-    <Grid container columnSpacing={15}>
-      <Grid item xs={6}>
-        <Box sx={{ border: "1px solid #CBCBCB", borderRadius: "10px", p: 2 }}>
-          <Typography sx={{ fontSize: "18px", fontWeight: 600, mb: 2 }}>
-            Ссылки{" "}
-            <Typography
-              component="span"
-              sx={{ fontWeight: 600, fontSize: "18px", color: "#878787" }}
-            >
-              1
-            </Typography>
-          </Typography>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Box component="img" alt="logo" src={comissionLogo} />
-            <Box>
-              <Typography sx={{ fontSize: "18px", fontWeight: 500 }}>
-                Storisbro - реклама в историях
-              </Typography>
-              <Typography
-                sx={{ fontSize: "14px", fontWeight: 500, color: "#878787" }}
-              >
-                adspoiler.com
-              </Typography>
-            </Box>
-          </Box>
-        </Box>
+    <Grid container>
+      <ProfileLinks />
+      <Grid item md={5} xs={12} sx={{ m: "0 auto" }}>
+        <Typography
+          variant="h4"
+          sx={{ fontSize: "24px", fontWeight: 600, textAlign: "center", mt: 5 }}
+        >
+          Ваша реферальная ссылка
+        </Typography>
         <Box
           sx={{
+            border: "1px solid #CBCBCB",
+            borderRadius: "10px",
             display: "flex",
+            justifyContent: "space-between",
             alignItems: "center",
-            justifyContent: "center",
-            mt: 4,
+            p: "10px",
+            mt: 2,
           }}
         >
-          <Box component="img" alt="check" src={comissionCheck} />
           <Typography
-            sx={{ fontSize: "24px", fontWeight: 600, width: "60%", ml: 1 }}
+            variant="body1"
+            sx={{ color: "#2A5885", fontSize: "18px", fontWeight: 400 }}
           >
-            Комиссия 5% + доход с рефералки
+            {refUrl}
           </Typography>
+          <Box
+            component="img"
+            alt="copy"
+            src={copy}
+            sx={{ cursor: "pointer" }}
+          />
         </Box>
       </Grid>
-      <Grid item xs={6}>
-        <Box sx={{ border: "1px solid #CBCBCB", borderRadius: "10px", p: 2 }}>
-          <Typography sx={{ fontSize: "18px", fontWeight: 600, mb: 2 }}>
-            Ссылки
-          </Typography>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Box component="img" alt="noavatar" src={comissionNoAvatar} />
-            <Typography sx={{ fontSize: "18px", fontWeight: 500, ml: 1 }}>
-              Здесь могла быть ссылка{"("}
-            </Typography>
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            mt: 4,
-          }}
-        >
-          <Box component="img" alt="cross" src={comissionCross} />
-          <Typography sx={{ fontSize: "24px", fontWeight: 600 }}>
-            Комиссия 20%
-          </Typography>
-        </Box>
-      </Grid>
+
+      <ProfileSteps />
     </Grid>
   );
 };

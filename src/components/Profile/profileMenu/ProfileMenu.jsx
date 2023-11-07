@@ -13,12 +13,12 @@ const ProfileMenu = () => {
   return (
     <Box
       sx={{
-        display: "flex",
+        display: { lg: "flex", xs: "none" },
         flexDirection: "column",
         justifyContent: "space-between",
         border: "1px solid #CDCDCD",
         borderRadius: "20px",
-        width: "68%",
+        width: "80%",
         pl: 1,
         pr: 1,
         pt: "15px",

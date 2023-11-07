@@ -12,6 +12,7 @@ const GetMoneyTable = ({ operations }) => {
         pl: 3,
         pr: 3,
         pt: 1,
+        display: { md: "flex", xs: "none" },
       }}
     >
       <Grid item xs={4}>

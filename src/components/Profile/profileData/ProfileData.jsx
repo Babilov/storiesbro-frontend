@@ -1,13 +1,18 @@
 import { Box } from "@mui/material";
 import React from "react";
-import ProfileNmae from "./ProfileName";
+import ProfileName from "./ProfileName";
 import ProfileEmail from "./ProfileEmail";
 import ProfileButton from "./ProfileButton";
 
 const ProfileData = () => {
   return (
-    <Box sx={{ width: "40%" }}>
-      <ProfileNmae />
+    <Box
+      sx={{
+        width: { md: "40%", sm: "60%", xs: "90%" },
+        m: { xs: "0 auto", lg: 0 },
+      }}
+    >
+      <ProfileName />
       <ProfileEmail />
       <ProfileButton />
     </Box>

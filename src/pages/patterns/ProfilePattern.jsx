@@ -9,17 +9,22 @@ const Profile = ({ children, title }) => {
       <ProfileHeader />
       <Container>
         <Grid container sx={{ mt: 5 }}>
-          <Grid item xs={2.5}>
+          <Grid item xs={0} lg={2.5}>
             <ProfileMenu />
           </Grid>
-          <Grid item xs={9.5}>
+          <Grid item lg={9.5} xs={12}>
             <Typography
               variant="h3"
-              sx={{ mb: 3, fontSize: "38px", fontWeight: 600 }}
+              sx={{
+                mb: 3,
+                fontSize: { md: "38px", xs: "18px" },
+                fontWeight: 600,
+                textAlign: { xs: "center", lg: "left" },
+              }}
             >
               {title}
             </Typography>
-            <Box>{children}</Box>
+            {children}
           </Grid>
         </Grid>
       </Container>

@@ -10,8 +10,8 @@ const CashConfirmationModal = ({ open, setOpen }) => {
     <MyModal
       title="Подтверждение"
       isFormOpen={open}
+      width={{ xs: "90%", md: "50%", lg: "30%" }}
       setIsFormOpen={() => setOpen(false)}
-      width="50%"
     >
       <Typography sx={{ textAlign: "center", fontSize: "18px" }}>
         Для вывода на новые реквизиты - введите код, отправленный на почту
