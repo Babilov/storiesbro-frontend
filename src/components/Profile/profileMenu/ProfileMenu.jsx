@@ -8,48 +8,37 @@ import LockIcon from "@mui/icons-material/Lock";
 import SettingsIcon from "@mui/icons-material/Settings";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import "../styles/profileStyle.css";
+import MyMenu from "../../UI/menu/MyMenu";
 
 const ProfileMenu = () => {
-  return (
-    <Box
-      sx={{
-        display: { lg: "flex", xs: "none" },
-        flexDirection: "column",
-        justifyContent: "space-between",
-        border: "1px solid #CDCDCD",
-        borderRadius: "20px",
-        width: "80%",
-        pl: 1,
-        pr: 1,
-        pt: "15px",
-      }}
-    >
-      <NavLink className="navLink" to="/profile">
-        <PersonIcon sx={{ mr: 1 }} />
-        Данные пользователя
-      </NavLink>
-
-      <NavLink className="navLink" to="/cash">
-        <PaymentsIcon sx={{ mr: 1 }} />
-        Пополнение/вывод
-      </NavLink>
-
-      <NavLink className="navLink" to="/password">
-        <LockIcon sx={{ mr: 1 }} />
-        Измененеие пароля
-      </NavLink>
-
-      <NavLink className="navLink" to="/alerts">
-        <SettingsIcon sx={{ mr: 1 }} />
-        Настройка уведомлений
-      </NavLink>
-
-      <NavLink className="navLink" to="/history">
-        <NotificationsIcon sx={{ mr: 1 }} />
-        История уведомлений
-      </NavLink>
-    </Box>
-  );
+  const links = [
+    {
+      icon: <PersonIcon sx={{ mr: 1 }} />,
+      linkText: "Данные пользователя",
+      linkHref: "/profile",
+    },
+    {
+      icon: <PaymentsIcon sx={{ mr: 1 }} />,
+      linkText: "Пополнение/вывод",
+      linkHref: "/cash",
+    },
+    {
+      icon: <LockIcon sx={{ mr: 1 }} />,
+      linkText: "Измененеие пароля",
+      linkHref: "/password",
+    },
+    {
+      icon: <SettingsIcon sx={{ mr: 1 }} />,
+      linkText: "Настройка уведомлений",
+      linkHref: "/alerts",
+    },
+    {
+      icon: <PersonIcon sx={{ mr: 1 }} />,
+      linkText: "История уведомлений",
+      linkHref: "/history",
+    },
+  ];
+  return <MyMenu links={links} />;
 };
 
 export default ProfileMenu;
