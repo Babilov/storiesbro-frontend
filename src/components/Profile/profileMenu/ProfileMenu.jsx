@@ -33,7 +33,7 @@ const ProfileMenu = () => {
       linkHref: "/alerts",
     },
     {
-      icon: <PersonIcon sx={{ mr: 1 }} />,
+      icon: <NotificationsIcon sx={{ mr: 1 }} />,
       linkText: "История уведомлений",
       linkHref: "/history",
     },

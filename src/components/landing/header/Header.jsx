@@ -49,25 +49,7 @@ const Header = ({ setIsLoginFormOpen }) => {
         xs={12}
         sm={8}
       >
-        <Typography
-          sx={{
-            fontSize: { sm: "22px", xs: "15px" },
-            fontWeight: 500,
-            color: isCustomer && "white",
-          }}
-        >
-          Заказчикам
-        </Typography>
         <Switcher />
-        <Typography
-          sx={{
-            fontSize: { sm: "22px", xs: "15px" },
-            fontWeight: 500,
-            color: isCustomer && "white",
-          }}
-        >
-          Владельцам сообществ
-        </Typography>
       </Grid>
       <Grid
         item

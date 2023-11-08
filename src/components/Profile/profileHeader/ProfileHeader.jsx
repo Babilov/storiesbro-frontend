@@ -6,7 +6,9 @@ import logo from "../../../images/icons/commonIcons/logo.svg";
 import humanProfile from "../../../images/icons/humanProfile.svg";
 import MyButton from "../../UI/buttons/MyButton";
 import LeftSideBar from "./sidebars/LeftSideBar";
-import RightSideBar from "./RightSideBar";
+import RightSideBar from "./sidebars/RightSideBar";
+
+import "./sidebars/sidebarStyles/style.css";
 
 const ProfileHeader = () => {
   const [leftSidebarOpen, setLeftSidebarOpen] = useState(false);

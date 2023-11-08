@@ -16,6 +16,8 @@ import GetMoney from "./pages/profilePages/GetMoney";
 import CashPattern from "./pages/patterns/CashPattern";
 import ChangePassword from "./components/Profile/profilePassword/ChangePassword";
 import LowComission from "./pages/profilePages/LowComission";
+import AuthorizedUserPattern from "./pages/patterns/AuthorizedUserPattern";
+import AuthorizedAdminPage from "./pages/authorizedUser/AuthorizedAdminPage";
 
 function App() {
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
@@ -111,6 +113,15 @@ function App() {
             <Profile title="История уведомлений">
               <ProfileHistory />
             </Profile>
+          }
+        />
+
+        <Route
+          path="/admin"
+          element={
+            <AuthorizedUserPattern>
+              <AuthorizedAdminPage />
+            </AuthorizedUserPattern>
           }
         />
       </Routes>

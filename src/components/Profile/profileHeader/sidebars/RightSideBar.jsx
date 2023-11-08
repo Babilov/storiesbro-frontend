@@ -1,11 +1,13 @@
 import React from "react";
-import { Box, Modal } from "@mui/material";
+import { Box, Divider, Modal } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import PersonIcon from "@mui/icons-material/Person";
 import PaymentsIcon from "@mui/icons-material/Payments";
 import LockIcon from "@mui/icons-material/Lock";
 import SettingsIcon from "@mui/icons-material/Settings";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+
+import cross from "./sidebarIcons/cross.svg";
 
 const RightSideBar = ({ open, setOpen }) => {
   return (
@@ -17,51 +19,65 @@ const RightSideBar = ({ open, setOpen }) => {
           height: "100vh",
           background: "white",
           right: 0,
-          pt: 20,
-          pl: 2,
+          p: 5,
           outline: "none",
         }}
       >
+        <Box
+          component="img"
+          alt="cross"
+          src={cross}
+          sx={{ position: "absolute", top: 15, left: 15, cursor: "pointer" }}
+          onClick={() => setOpen(false)}
+        />
         <NavLink
-          className="navLink"
+          className="navLink menuItem"
           to="/profile"
           onClick={() => setOpen(false)}
         >
-          <PersonIcon sx={{ mr: 1 }} />
+          <PersonIcon className="menuIcon" sx={{ mr: 1 }} />
           Данные пользователя
         </NavLink>
-
-        <NavLink className="navLink" to="/cash" onClick={() => setOpen(false)}>
-          <PaymentsIcon sx={{ mr: 1 }} />
+        <Divider />
+        <NavLink
+          className="navLink menuItem"
+          to="/cash"
+          onClick={() => setOpen(false)}
+        >
+          <PaymentsIcon className="menuIcon" sx={{ mr: 1 }} />
           Пополнение/вывод
         </NavLink>
+        <Divider />
 
         <NavLink
-          className="navLink"
+          className="navLink menuItem"
           to="/password"
           onClick={() => setOpen(false)}
         >
-          <LockIcon sx={{ mr: 1 }} />
+          <LockIcon className="menuIcon" sx={{ mr: 1 }} />
           Измененеие пароля
         </NavLink>
+        <Divider />
 
         <NavLink
-          className="navLink"
+          className="navLink menuItem"
           to="/alerts"
           onClick={() => setOpen(false)}
         >
-          <SettingsIcon sx={{ mr: 1 }} />
+          <SettingsIcon className="menuIcon" sx={{ mr: 1 }} />
           Настройка уведомлений
         </NavLink>
+        <Divider />
 
         <NavLink
-          className="navLink"
+          className="navLink menuItem"
           to="/history"
           onClick={() => setOpen(false)}
         >
-          <NotificationsIcon sx={{ mr: 1 }} />
+          <NotificationsIcon className="menuIcon" sx={{ mr: 1 }} />
           История уведомлений
         </NavLink>
+        <Divider />
       </Box>
     </Modal>
   );

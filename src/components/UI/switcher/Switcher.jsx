@@ -1,11 +1,36 @@
-import { Switch } from "@mui/material";
+import { Box, Switch, Typography } from "@mui/material";
 import React, { useContext } from "react";
 import { Context } from "../../../context/Context";
 
 const Switcher = () => {
   const [isCustomer, setIsCustomer] = useContext(Context);
   return (
-    <Switch checked={!isCustomer} onClick={() => setIsCustomer(!isCustomer)} />
+    <Box
+      sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+    >
+      <Typography
+        sx={{
+          fontSize: { sm: "22px", xs: "15px" },
+          fontWeight: 500,
+          color: isCustomer && "white",
+        }}
+      >
+        Заказчикам
+      </Typography>
+      <Switch
+        checked={!isCustomer}
+        onClick={() => setIsCustomer(!isCustomer)}
+      />
+      <Typography
+        sx={{
+          fontSize: { sm: "22px", xs: "15px" },
+          fontWeight: 500,
+          color: isCustomer && "white",
+        }}
+      >
+        Владельцам сообществ
+      </Typography>
+    </Box>
   );
 };
 
