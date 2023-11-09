@@ -17,7 +17,11 @@ import CashPattern from "./pages/patterns/CashPattern";
 import ChangePassword from "./components/Profile/profilePassword/ChangePassword";
 import LowComission from "./pages/profilePages/LowComission";
 import AuthorizedUserPattern from "./pages/patterns/AuthorizedUserPattern";
-import AuthorizedAdminPage from "./pages/authorizedUser/AuthorizedAdminPage";
+import AuthorizedAdminPage from "./pages/authorizedUser/admin/authorizedAdminPage/AuthorizedAdminPage";
+import Creatives from "./pages/authorizedUser/admin/creatives/Creatives";
+import Statistic from "./components/authorizedAdmin/statistic/Statistic";
+import AuthorizedAdminHelp from "./pages/authorizedUser/admin/authorizedAdminHelp/AuthorizedAdminHelp";
+import { Grid } from "@mui/material";
 
 function App() {
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
@@ -32,11 +36,13 @@ function App() {
               <CustomerPage
                 setIsLoginFormOpen={setIsLoginFormOpen}
                 isLoginFormOpen={isLoginFormOpen}
+                ismainpage={true}
               />
             ) : (
               <AdminPage
                 setIsLoginFormOpen={setIsLoginFormOpen}
                 isLoginFormOpen={isLoginFormOpen}
+                ismainpage={true}
               />
             )
           }
@@ -119,8 +125,39 @@ function App() {
         <Route
           path="/admin"
           element={
-            <AuthorizedUserPattern>
+            <AuthorizedUserPattern ismainpage={true}>
               <AuthorizedAdminPage />
+            </AuthorizedUserPattern>
+          }
+        />
+
+        <Route
+          path="/creatives"
+          element={
+            <AuthorizedUserPattern>
+              <Grid item xs={10}>
+                <Creatives />
+              </Grid>
+            </AuthorizedUserPattern>
+          }
+        />
+
+        <Route
+          path="/statistic"
+          element={
+            <AuthorizedUserPattern>
+              <Grid item xs={10}>
+                <Statistic />
+              </Grid>
+            </AuthorizedUserPattern>
+          }
+        />
+
+        <Route
+          path="/admin-help"
+          element={
+            <AuthorizedUserPattern>
+              <AuthorizedAdminHelp />
             </AuthorizedUserPattern>
           }
         />

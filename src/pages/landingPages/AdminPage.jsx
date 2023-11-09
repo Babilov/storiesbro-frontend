@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Container, Box } from "@mui/material";
 
 import LoginForm from "../../components/UI/modals/LoginForm";
@@ -35,7 +35,7 @@ images[helpDesk] = "Отзывчивая тех. поддержка 24/7";
 images[bot] = "Автоматическая публикация историй";
 images[hours] = "Постоянная монетизация сообществ";
 
-const AdminPage = ({ isLoginFormOpen, setIsLoginFormOpen }) => {
+const AdminPage = ({ isLoginFormOpen, setIsLoginFormOpen, ismainpage }) => {
   const questions = {
     "Разрешена ли реклама в историях?":
       "Да, разрешена. Главное, чтобы рекламные истории соответствовали правилам Вконтакте, поэтому мы проверяем все креативы вручную.",
@@ -48,7 +48,6 @@ const AdminPage = ({ isLoginFormOpen, setIsLoginFormOpen }) => {
     "Как происходит процесс монетизации сообщества?":
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   };
-
   return (
     <>
       <Container>
@@ -59,7 +58,10 @@ const AdminPage = ({ isLoginFormOpen, setIsLoginFormOpen }) => {
           />
 
           <Grid item xs={12}>
-            <Header setIsLoginFormOpen={setIsLoginFormOpen} />
+            <Header
+              setIsLoginFormOpen={setIsLoginFormOpen}
+              ismainpage={ismainpage}
+            />
           </Grid>
 
           <Grid item xs={12}>

@@ -2,11 +2,16 @@ import { Box, Switch, Typography } from "@mui/material";
 import React, { useContext } from "react";
 import { Context } from "../../../context/Context";
 
-const Switcher = () => {
+const Switcher = ({ ismainpage }) => {
   const [isCustomer, setIsCustomer] = useContext(Context);
+
   return (
     <Box
-      sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+      sx={{
+        display: ismainpage ? "flex" : "none",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
     >
       <Typography
         sx={{

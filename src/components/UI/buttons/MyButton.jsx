@@ -9,7 +9,9 @@ const MyButton = ({ children, options, onClick }) => {
       sx={{
         background: options["background"],
         color: options["color"],
-        borderRadius: "10px",
+        borderRadius: options["borderRadius"]
+          ? options["borderRadius"]
+          : "10px",
         border: options["border"],
         mr: options["mr"],
         ":hover": {

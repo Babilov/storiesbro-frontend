@@ -15,7 +15,7 @@ import settings from "./images/settings.svg";
 import Switcher from "../../../components/UI/switcher/Switcher";
 import MyButton from "../../../components/UI/buttons/MyButton";
 
-const AuthorizedUserHeader = () => {
+const AuthorizedUserHeader = ({ ismainpage = false }) => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   return (
@@ -24,7 +24,7 @@ const AuthorizedUserHeader = () => {
         <Box component="img" alt="logo" src={logo} />
       </Grid>
       <Grid item xs={8}>
-        <Switcher />
+        <Switcher ismainpage={ismainpage} />
       </Grid>
       <Grid
         item

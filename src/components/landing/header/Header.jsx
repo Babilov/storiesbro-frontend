@@ -9,7 +9,7 @@ import enter from "../../../images/icons/landingIcons/enter.svg";
 import { Context } from "../../../context/Context";
 import Switcher from "../../UI/switcher/Switcher";
 
-const Header = ({ setIsLoginFormOpen }) => {
+const Header = ({ setIsLoginFormOpen, ismainpage }) => {
   const [isCustomer, _] = useContext(Context);
   return (
     <Grid
@@ -49,7 +49,7 @@ const Header = ({ setIsLoginFormOpen }) => {
         xs={12}
         sm={8}
       >
-        <Switcher />
+        <Switcher ismainpage={ismainpage} />
       </Grid>
       <Grid
         item

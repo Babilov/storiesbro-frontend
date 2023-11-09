@@ -32,7 +32,7 @@ const AuthorizedAdminMenu = () => {
     {
       icon: <Box component="img" alt="help" src={question} />,
       linkText: "Помощь",
-      linkHref: "/help",
+      linkHref: "/admin-help",
     },
 
     {

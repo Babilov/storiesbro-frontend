@@ -5,6 +5,7 @@ const Advices = () => {
   const FONT_SIZE_XL = "38px";
   const FONT_SIZE_M = "18px";
   const FONT_WEIGHT_XL = "600";
+
   return (
     <Box sx={{ mb: 10 }}>
       <Typography

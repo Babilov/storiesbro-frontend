@@ -23,7 +23,7 @@ import helpDesk from "../../images/customerAdvantages/helpDesk.svg";
 import phone from "../../images/customerAdvantages/phone.svg";
 import check from "../../images/customerAdvantages/check.svg";
 
-const CustomerPage = ({ isLoginFormOpen, setIsLoginFormOpen }) => {
+const CustomerPage = ({ isLoginFormOpen, setIsLoginFormOpen, ismainpage }) => {
   const images = {};
   images[robot] = "Автоматическая публикация историй";
   images[stats] = "Прозрачная и подробная статистика";
@@ -55,7 +55,10 @@ const CustomerPage = ({ isLoginFormOpen, setIsLoginFormOpen }) => {
             setIsLoginFormOpen={setIsLoginFormOpen}
           />
           <Grid item xs={12}>
-            <Header setIsLoginFormOpen={setIsLoginFormOpen} />
+            <Header
+              setIsLoginFormOpen={setIsLoginFormOpen}
+              ismainpage={ismainpage}
+            />
           </Grid>
           <Grid item xs={12}>
             <Hero
