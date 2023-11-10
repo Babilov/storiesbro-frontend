@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import "./styles/App.css";
+import "./styles/font.css";
 import { Context } from "./context/Context";
 import AdminPage from "./pages/landingPages/AdminPage";
 import CustomerPage from "./pages/landingPages/CustomerPage";

@@ -24,7 +24,7 @@ const HelpSteps = () => {
         </Typography>{" "}
         сообщество?
       </Typography>
-      <Box component="img" alt="steps" src={helpSteps} />
+      <Box component="img" alt="steps" src={helpSteps} sx={{ width: "100%" }} />
     </Box>
   );
 };

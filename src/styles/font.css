@@ -11,10 +11,32 @@
   font-weight: 400;
 }
 
+.grid .w700 {
+  font-weight: 700;
+}
+
 .bold {
   font-weight: bold;
 }
 
 .w900 {
   font-weight: 900;
+}
+
+.grid .title {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.grid .description {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.grid .bold {
+  font-size: 24px;
+  font-weight: 700;
 }

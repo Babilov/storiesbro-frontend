@@ -10,7 +10,12 @@ const ClosingBlock = () => {
     <Grid
       container
       className="orangeBorder"
-      sx={{ p: 5, position: "relative", display: open ? "flex" : "none" }}
+      sx={{
+        p: 5,
+        position: "relative",
+        display: open ? "flex" : "none",
+        m: "0 auto",
+      }}
       columnSpacing={5}
     >
       <Box
@@ -33,7 +38,12 @@ const ClosingBlock = () => {
         </Typography>
       </Grid>
       <Grid item xs={5}>
-        <Box component="img" alt="instruction" src={instruction} />
+        <Box
+          component="img"
+          alt="instruction"
+          src={instruction}
+          sx={{ width: "100%" }}
+        />
       </Grid>
     </Grid>
   );
