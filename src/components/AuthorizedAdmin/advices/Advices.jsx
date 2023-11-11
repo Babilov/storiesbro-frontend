@@ -3,20 +3,29 @@ import React from "react";
 
 const Advices = () => {
   const FONT_SIZE_XL = "38px";
-  const FONT_SIZE_M = "18px";
+  const FONT_SIZE_MD = "18px";
+  const FONT_SIZE_SM = "14px";
   const FONT_WEIGHT_XL = "600";
 
   return (
     <Box sx={{ mb: 10 }}>
       <Typography
         variant="h3"
-        sx={{ fontSize: FONT_SIZE_XL, fontWeight: FONT_WEIGHT_XL, mb: 5 }}
+        sx={{
+          fontSize: { md: FONT_SIZE_XL, xs: FONT_SIZE_MD },
+          fontWeight: FONT_WEIGHT_XL,
+          mt: 2,
+          mb: { md: 5, xs: 2 },
+        }}
       >
         Как{" "}
         <Typography
           component="span"
           className="orange"
-          sx={{ fontSize: FONT_SIZE_XL, fontWeight: FONT_WEIGHT_XL }}
+          sx={{
+            fontSize: { md: FONT_SIZE_XL, xs: FONT_SIZE_MD },
+            fontWeight: FONT_WEIGHT_XL,
+          }}
         >
           повысить
         </Typography>{" "}
@@ -24,11 +33,16 @@ const Advices = () => {
       </Typography>
 
       <Box>
-        <Typography sx={{ fontSize: FONT_SIZE_M, mb: 2 }}>
+        <Typography
+          sx={{ fontSize: { xs: FONT_SIZE_SM, md: FONT_SIZE_MD }, mb: 2 }}
+        >
           1.{" "}
           <Typography
             component="span"
-            sx={{ fontWeight: FONT_WEIGHT_XL, fontSize: FONT_SIZE_M }}
+            sx={{
+              fontWeight: FONT_WEIGHT_XL,
+              fontSize: { xs: FONT_SIZE_SM, md: FONT_SIZE_MD },
+            }}
           >
             Добавляйте “популярную” музыку.{" "}
           </Typography>
@@ -36,11 +50,16 @@ const Advices = () => {
           выше, чем с просто мелодиями/без песен.
         </Typography>
 
-        <Typography sx={{ fontSize: FONT_SIZE_M, mb: 2 }}>
+        <Typography
+          sx={{ fontSize: { xs: FONT_SIZE_SM, md: FONT_SIZE_MD }, mb: 2 }}
+        >
           2.{" "}
           <Typography
             component="span"
-            sx={{ fontWeight: FONT_WEIGHT_XL, fontSize: FONT_SIZE_M }}
+            sx={{
+              fontWeight: FONT_WEIGHT_XL,
+              fontSize: { xs: FONT_SIZE_SM, md: FONT_SIZE_MD },
+            }}
           >
             Соблюдайте пропорции.
           </Typography>{" "}
@@ -48,11 +67,16 @@ const Advices = () => {
           поэтому 9:16 - наиболее подходящее соотношение сторон.
         </Typography>
 
-        <Typography sx={{ fontSize: FONT_SIZE_M, mb: 2 }}>
+        <Typography
+          sx={{ fontSize: { xs: FONT_SIZE_SM, md: FONT_SIZE_MD }, mb: 2 }}
+        >
           3.{" "}
           <Typography
             component="span"
-            sx={{ fontWeight: FONT_WEIGHT_XL, fontSize: FONT_SIZE_M }}
+            sx={{
+              fontWeight: FONT_WEIGHT_XL,
+              fontSize: { xs: FONT_SIZE_SM, md: FONT_SIZE_MD },
+            }}
           >
             Ориентируйтесь на качественный монтаж и исходники.
           </Typography>{" "}
@@ -60,22 +84,32 @@ const Advices = () => {
           креативов выше конверсия, чем у сделанных “на коленке”.
         </Typography>
 
-        <Typography sx={{ fontSize: FONT_SIZE_M, mb: 2 }}>
+        <Typography
+          sx={{ fontSize: { xs: FONT_SIZE_SM, md: FONT_SIZE_MD }, mb: 2 }}
+        >
           4.{" "}
           <Typography
             component="span"
-            sx={{ fontWeight: FONT_WEIGHT_XL, fontSize: FONT_SIZE_M }}
+            sx={{
+              fontWeight: FONT_WEIGHT_XL,
+              fontSize: { xs: FONT_SIZE_SM, md: FONT_SIZE_MD },
+            }}
           >
             Не забывайте про рекламные основы.
           </Typography>{" "}
           AIDA, ODC, PPPP и остальные формулы - “друзья” высокой конверсии.
         </Typography>
 
-        <Typography sx={{ fontSize: FONT_SIZE_M, mb: 2 }}>
+        <Typography
+          sx={{ fontSize: { xs: FONT_SIZE_SM, md: FONT_SIZE_MD }, mb: 2 }}
+        >
           5.{" "}
           <Typography
             component="span"
-            sx={{ fontWeight: FONT_WEIGHT_XL, fontSize: FONT_SIZE_M }}
+            sx={{
+              fontWeight: FONT_WEIGHT_XL,
+              fontSize: { xs: FONT_SIZE_SM, md: FONT_SIZE_MD },
+            }}
           >
             Захватывайте внимание в первые секунды.
           </Typography>{" "}
@@ -83,11 +117,16 @@ const Advices = () => {
           историю и конверсия упадёт.
         </Typography>
 
-        <Typography sx={{ fontSize: FONT_SIZE_M, mb: 2 }}>
+        <Typography
+          sx={{ fontSize: { xs: FONT_SIZE_SM, md: FONT_SIZE_MD }, mb: 2 }}
+        >
           6.{" "}
           <Typography
             component="span"
-            sx={{ fontWeight: FONT_WEIGHT_XL, fontSize: FONT_SIZE_M }}
+            sx={{
+              fontWeight: FONT_WEIGHT_XL,
+              fontSize: { xs: FONT_SIZE_SM, md: FONT_SIZE_MD },
+            }}
           >
             Призывайте к действию.
           </Typography>{" "}

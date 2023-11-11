@@ -1,0 +1,16 @@
+.spaceBetween {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.spaceAround {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.alignCenter {
+    display: flex;
+    align-items: center;
+}

@@ -34,7 +34,7 @@ const Statistic = () => {
 
   return (
     <>
-      <Grid item xs={6} sx={{ m: "0 auto" }}>
+      <Grid item md={6} sm={10} xs={12} sx={{ m: "0 auto" }}>
         <PublicSelect publics={publics} />
         <DataPickers />
         <PeriodSelect />
@@ -48,7 +48,7 @@ const Statistic = () => {
           </MyButton>
         </Box>
       </Grid>
-      <Grid item xs={8} sx={{ m: "50px auto" }}>
+      <Grid item md={8} xs={12} sx={{ m: "50px auto" }}>
         <Table statistic={statistic} open={open} />
       </Grid>
     </>

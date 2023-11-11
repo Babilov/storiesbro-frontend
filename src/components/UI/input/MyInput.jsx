@@ -9,6 +9,7 @@ const MyInput = ({
   disabled,
   onClick,
   onBlur,
+  error,
 }) => {
   return (
     <TextField
@@ -25,6 +26,7 @@ const MyInput = ({
       InputProps={{
         style: {
           borderRadius: "10px",
+          color: error ? "#D25D48" : "black",
         },
       }}
     />

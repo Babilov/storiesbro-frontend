@@ -14,7 +14,7 @@ const AuthorizedAdminMenu = () => {
     {
       icon: <Box component="img" alt="list" src={list} />,
       linkText: "Мои сообщества",
-      linkHref: "/creatives",
+      linkHref: "/publics",
     },
 
     {

@@ -4,16 +4,24 @@ import React from "react";
 import vk from "../images/vk.svg";
 import MyButton from "../../../../UI/buttons/MyButton";
 
-const AddPublicButton = () => {
+const AddPublicButton = ({ setOpen }) => {
   return (
-    <Box sx={{ width: "100%", display: "flex", justifyContent: "flex-end" }}>
+    <Box
+      sx={{
+        width: "100%",
+        display: "flex",
+        justifyContent: { md: "flex-end", xs: "flex-start" },
+      }}
+    >
       <Box
         sx={{
-          width: "30%",
+          width: { md: "30%", sm: "50", xs: "75" },
           mb: 2,
+          mt: 1,
         }}
       >
         <MyButton
+          onClick={() => setOpen(true)}
           options={{
             background: "white",
             color: "black",

@@ -8,7 +8,7 @@ const MyButton = ({ children, options, onClick }) => {
       onClick={onClick}
       sx={{
         background: options["background"],
-        color: options["color"],
+        color: options["color"] ? options["color"] : "white",
         borderRadius: options["borderRadius"]
           ? options["borderRadius"]
           : "10px",

@@ -31,17 +31,19 @@ const MyModal = ({
           outline: "none",
         }}
       >
-        <Typography
-          sx={{
-            mb: 3,
-            mt: 2,
-            textAlign: "center",
-            fontWeight: 600,
-            fontSize: titleFont ? titleFont : "38px",
-          }}
-        >
-          {title}
-        </Typography>
+        {title && (
+          <Typography
+            sx={{
+              mb: 3,
+              mt: 2,
+              textAlign: "center",
+              fontWeight: 600,
+              fontSize: titleFont ? titleFont : "38px",
+            }}
+          >
+            {title}
+          </Typography>
+        )}
         {children}
       </Box>
     </Modal>

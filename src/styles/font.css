@@ -15,6 +15,10 @@
   font-weight: 700;
 }
 
+.grid .w600 {
+  font-weight: 600;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -27,16 +31,91 @@
   font-size: 32px;
   font-weight: 600;
   text-align: center;
-  margin: 40px 0;
+  margin-bottom: 40px;
+}
+
+.grid .centerText {
+  text-align: center;
 }
 
 .grid .description {
   font-size: 24px;
   font-weight: 400;
-  margin-bottom: 20px;
+
 }
 
 .grid .bold {
   font-size: 24px;
   font-weight: 700;
+}
+
+.grid .quote {
+  font-size: 18px;
+  font-weight: 400;
+  color: #2A5885;
+}
+
+button .buttonFont {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+
+@media (max-width: 899.5px) {
+  .grid .title{
+    font-size: 16px;
+  }
+
+  .grid .description {
+    font-size: 14px;
+  }
+  .grid span .description {
+    font-size: 14px;
+  }
+
+  .grid .bold {
+    font-size: 14px;
+  }
+
+  .grid .caruselItem{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .grid .quote {
+    font-size: 12px;
+  }
+
+  button .buttonFont {
+    font-size: 16px;
+  }
+}
+
+
+.grid .mdSizeText {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.grid .sm500 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+
+.grid .gradient {
+  font-size: 40px;
+  font-weight: 600;
+  background: -webkit-linear-gradient(#E37E31, #E37E3100);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 1px solid #E37E31;
+  border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    width: 58px;
+    height: 58px;
+    text-align: center;
+    margin-right: 5px;
 }

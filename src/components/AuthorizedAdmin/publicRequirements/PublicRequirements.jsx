@@ -10,18 +10,28 @@ const PublicRequirements = () => {
     >
       <Grid item xs={12}>
         <Typography
-          sx={{ fontSize: "32px", fontWeight: 600, textAlign: "center", mb: 2 }}
+          sx={{
+            fontSize: { md: "32px", xs: "18px" },
+            fontWeight: 600,
+            textAlign: "center",
+            mb: 2,
+          }}
         >
           Требования к сообществам
         </Typography>
       </Grid>
       <Grid
         item
-        xs={3}
-        sx={{ border: "1px solid #CBCBCB", borderRadius: "10px", p: 2 }}
+        md={3}
+        xs={12}
+        sx={{ border: "1px solid #CBCBCB", borderRadius: "10px", p: 2, mb: 1 }}
       >
         <Typography
-          sx={{ fontSize: "18px", fontWeight: 600, textAlign: "center" }}
+          sx={{
+            fontSize: { md: "18px", xs: "12px" },
+            fontWeight: { md: 600, xs: 500 },
+            textAlign: "center",
+          }}
         >
           Должно быть “активным” Без мусорного контента, накрутки т.п.
         </Typography>
@@ -29,17 +39,19 @@ const PublicRequirements = () => {
 
       <Grid
         item
-        xs={3}
+        md={3}
+        xs={12}
         sx={{
           border: "1px solid #CBCBCB",
           borderRadius: "10px",
           p: 2,
+          mb: 1,
         }}
       >
         <Typography
           sx={{
-            fontSize: "18px",
-            fontWeight: 600,
+            fontSize: { md: "18px", xs: "12px" },
+            fontWeight: { md: 600, xs: 500 },
             textAlign: "center",
           }}
         >
@@ -53,7 +65,8 @@ const PublicRequirements = () => {
 
       <Grid
         item
-        xs={3}
+        md={3}
+        xs={12}
         sx={{
           border: "1px solid #CBCBCB",
           borderRadius: "10px",
@@ -64,8 +77,8 @@ const PublicRequirements = () => {
       >
         <Typography
           sx={{
-            fontSize: "18px",
-            fontWeight: 600,
+            fontSize: { md: "18px", xs: "12px" },
+            fontWeight: { md: 600, xs: 500 },
             textAlign: "center",
             display: "table-cell",
             verticalAlign: "middle",

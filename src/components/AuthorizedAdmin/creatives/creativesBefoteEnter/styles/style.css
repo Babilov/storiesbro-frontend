@@ -12,3 +12,16 @@
     width: 50%;
     margin: 0 auto;
 }
+
+@media (max-width: 768px) {
+    .creatives .creatives__text {
+        font-size: 14px;
+
+    }
+
+    .creatives .creatives__title {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+}

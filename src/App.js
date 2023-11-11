@@ -3,6 +3,8 @@ import { Route, Routes } from "react-router-dom";
 
 import "./styles/App.css";
 import "./styles/font.css";
+import "./styles/form.css";
+import "./styles/flex.css";
 import { Context } from "./context/Context";
 import AdminPage from "./pages/landingPages/AdminPage";
 import CustomerPage from "./pages/landingPages/CustomerPage";
@@ -23,6 +25,8 @@ import Creatives from "./pages/authorizedUser/admin/creatives/Creatives";
 import Statistic from "./components/authorizedAdmin/statistic/Statistic";
 import AuthorizedAdminHelp from "./pages/authorizedUser/admin/authorizedAdminHelp/AuthorizedAdminHelp";
 import { Grid } from "@mui/material";
+import Referal from "./pages/authorizedUser/admin/referal/Referal";
+import Support from "./pages/authorizedUser/admin/support/Support";
 
 function App() {
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
@@ -133,10 +137,10 @@ function App() {
         />
 
         <Route
-          path="/creatives"
+          path="/publics"
           element={
             <AuthorizedUserPattern>
-              <Grid item xs={10}>
+              <Grid item xs={12} lg={10}>
                 <Creatives />
               </Grid>
             </AuthorizedUserPattern>
@@ -147,18 +151,29 @@ function App() {
           path="/statistic"
           element={
             <AuthorizedUserPattern>
-              <Grid item xs={10}>
+              <Grid item xs={12} lg={10}>
                 <Statistic />
               </Grid>
             </AuthorizedUserPattern>
           }
         />
 
+        <Route path="/admin-help" element={<AuthorizedAdminHelp />} />
+
         <Route
-          path="/admin-help"
+          path="/referal"
           element={
             <AuthorizedUserPattern>
-              <AuthorizedAdminHelp />
+              <Referal />
+            </AuthorizedUserPattern>
+          }
+        />
+
+        <Route
+          path="/support"
+          element={
+            <AuthorizedUserPattern>
+              <Support />
             </AuthorizedUserPattern>
           }
         />

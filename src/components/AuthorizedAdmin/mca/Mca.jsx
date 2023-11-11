@@ -13,7 +13,9 @@ const Mca = () => {
         </Typography>{" "}
         - это универсальные развлекательные истории для мужской аудитории.
       </Typography>
-      <Typography className="title">Примеры стандартных МЦА</Typography>
+      <Typography className="title" sx={{ mt: 4 }}>
+        Примеры стандартных МЦА
+      </Typography>
       <AuthorizedAdminCarusel image={mca} />
     </Box>
   );

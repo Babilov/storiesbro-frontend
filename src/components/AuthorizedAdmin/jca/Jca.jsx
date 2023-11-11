@@ -14,7 +14,9 @@ const Jca = () => {
         </Typography>
         - это универсальные развлекательные истории для женской аудитории
       </Typography>
-      <Typography className="title">Примеры стандартных ЖЦА</Typography>
+      <Typography className="title" sx={{ mt: 4 }}>
+        Примеры стандартных ЖЦА
+      </Typography>
       <AuthorizedAdminCarusel image={jca} />
     </Box>
   );

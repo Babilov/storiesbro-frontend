@@ -7,100 +7,101 @@ import {
   Typography,
 } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 import logo from "./images/logo.svg";
-import exit from "./images/exit.svg";
-import settings from "./images/settings.svg";
+
+import menu from "./images/menu.svg";
 import Switcher from "../../../components/UI/switcher/Switcher";
 import MyButton from "../../../components/UI/buttons/MyButton";
+import AdminLeftSideBar from "../../authorizedAdmin/adminLeftSideBar/AdminLeftSideBar";
+import ExitMenu from "./exitMenu/ExitMenu";
 
 const AuthorizedUserHeader = ({ ismainpage = false }) => {
   const [open, setOpen] = useState(false);
+  const [leftSidebarOpen, setLeftSidebarOpen] = useState(false);
+
   const navigate = useNavigate();
   return (
     <Grid container sx={{ alignItems: "center" }}>
-      <Grid item xs={2}>
-        <Box component="img" alt="logo" src={logo} />
-      </Grid>
-      <Grid item xs={8}>
-        <Switcher ismainpage={ismainpage} />
-      </Grid>
+      <Grid
+        component="img"
+        alt="logo"
+        src={logo}
+        order={{ lg: 2, xs: 3 }}
+        item
+        lg={2}
+        xs={8}
+        sx={{
+          height: { xs: "50px", sm: "95px" },
+          width: { xs: "30px", sm: "60px" },
+        }}
+      />
+      <AdminLeftSideBar open={leftSidebarOpen} setOpen={setLeftSidebarOpen} />
       <Grid
         item
         xs={2}
         sx={{
+          height: { xs: "20px" },
+          display: {
+            xs: "block",
+            lg: "none",
+          },
+        }}
+        component="img"
+        alt="menu"
+        src={menu}
+        order={{ xs: 2 }}
+        onClick={() => setLeftSidebarOpen(true)}
+      />
+
+      <Grid
+        item
+        lg={8}
+        xs={12}
+        order={{ lg: 2, xs: 1 }}
+        sx={{
+          background: {
+            xs: "#FBECE0",
+            lg: "white",
+          },
+          height: { xs: "50px", sm: "auto" },
+          display: ismainpage ? "flex" : "none",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Switcher ismainpage={ismainpage} />
+      </Grid>
+
+      <Grid
+        item
+        lg={ismainpage ? 2 : 10}
+        xs={2}
+        order={{ lg: 3, xs: 4 }}
+        sx={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent: "flex-end",
           position: "relative",
         }}
       >
-        <MyButton options={{ background: "#E37E31", color: "white" }}>
-          <Link to="/cash" style={{ textDecoration: "none" }}>
-            <Typography sx={{ color: "white" }}>Пополнить</Typography>
-          </Link>
-        </MyButton>
-
-        <Typography>0₽</Typography>
-        <ClickAwayListener onClickAway={() => setOpen(false)}>
-          <PersonIcon
-            onClick={() => setOpen(!open)}
-            sx={{ cursor: "pointer" }}
-          />
-        </ClickAwayListener>
-
         <Box
           sx={{
-            position: "absolute",
-            right: 0,
-            top: "120%",
-            zIndex: 1,
-            background: "white",
-            border: "1px solid rgba(217, 217, 217, 1)",
-            borderRadius: "10px",
-            width: "200px",
-            display: open ? "block" : "none",
+            width: ismainpage ? "70%" : "14%",
+            display: { xs: "none", lg: "block" },
           }}
         >
-          <Box
-            sx={{
-              alignItems: "center",
-              display: "flex",
-              height: "50px",
-            }}
-          >
-            <Box
-              component="img"
-              alt="settings"
-              src={settings}
-              sx={{ mr: 1, ml: 1 }}
-            />
-            <Typography
-              sx={{
-                fontSize: "16px",
-                cursor: "pointer",
-                ":hover": { color: "rgba(227, 126, 49, 1)" },
-              }}
-              onClick={() => navigate("/profile")}
-            >
-              Настройки
-            </Typography>
-          </Box>
-          <Divider />
-          <Box sx={{ display: "flex", alignItems: "center", height: "50px" }}>
-            <Box component="img" alt="exit" src={exit} sx={{ mr: 1, ml: 1 }} />
-            <Typography
-              sx={{
-                fontSize: "16px",
-                cursor: "pointer",
-                ":hover": { color: "rgba(227, 126, 49, 1)" },
-              }}
-            >
-              Выйти{" "}
-            </Typography>
-          </Box>
+          <MyButton options={{ background: "#E37E31", color: "white" }}>
+            <Link to="/cash" style={{ textDecoration: "none" }}>
+              <Typography sx={{ color: "white" }}>Пополнить</Typography>
+            </Link>
+          </MyButton>
         </Box>
+        <Typography sx={{ display: { xs: "none", lg: "block" } }}>
+          0₽
+        </Typography>
+        <ExitMenu open={open} setOpen={setOpen} />
       </Grid>
     </Grid>
   );

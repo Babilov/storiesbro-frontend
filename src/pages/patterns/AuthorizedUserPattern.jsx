@@ -1,5 +1,5 @@
 import { Container, Grid } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
 import cosmetic from "./authorizedUserImages/cosmetic.svg";
 import thisUser from "./authorizedUserImages/thisUser.svg";
@@ -11,37 +11,43 @@ import AuthorizedAdminMenu from "../../components/authorizedAdmin/menu/Authorize
 import { PublicsContext } from "../../context/PublicsContext";
 
 const AuthorizedUserPattern = ({ children, ismainpage }) => {
-  const publics = [
+  const [publics, setPublics] = useState([
     {
+      id: 0,
       image: thisUser,
       title: "Этот пользователь",
       status: "На модерации",
     },
     {
+      id: 1,
       image: pikchi,
       title: "Пикчи <33",
       status: "Активен",
     },
     {
+      id: 2,
       image: guides,
       title: "Гайды",
       status: "Отклонён",
     },
     {
+      id: 3,
       image: cosmetic,
       title: "Косметика",
       status: "Выключен",
     },
-  ];
+  ]);
   return (
-    <PublicsContext.Provider value={publics}>
+    <PublicsContext.Provider value={[publics, setPublics]}>
       <Container>
         <AuthorizedUserHeader ismainpage={ismainpage} />
         <Grid container>
-          <Grid item xs={2}>
+          <Grid item lg={2} xs={0}>
             <AuthorizedAdminMenu />
           </Grid>
-          {children}
+          <Grid item lg={10} xs={12}>
+            {children}
+          </Grid>
         </Grid>
       </Container>
     </PublicsContext.Provider>

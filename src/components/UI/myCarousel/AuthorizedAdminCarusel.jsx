@@ -6,14 +6,14 @@ const AuthorizedAdminCarusel = ({ image }) => {
 
   return (
     <Carousel cellPadding={105}>
-      <img src={image} alt="img" />
-      <img src={image} alt="img" />
-      <img src={image} alt="img" />
-      <img src={image} alt="img" />
-      <img src={image} alt="img" />
-      <img src={image} alt="img" />
-      <img src={image} alt="img" />
-      <img src={image} alt="img" />
+      <img className="caruselItem" src={image} alt="img" />
+      <img className="caruselItem" src={image} alt="img" />
+      <img className="caruselItem" src={image} alt="img" />
+      <img className="caruselItem" src={image} alt="img" />
+      <img className="caruselItem" src={image} alt="img" />
+      <img className="caruselItem" src={image} alt="img" />
+      <img className="caruselItem" src={image} alt="img" />
+      <img className="caruselItem" src={image} alt="img" />
     </Carousel>
   );
 };
