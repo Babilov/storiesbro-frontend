@@ -1,15 +1,21 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import MyModal from "../../../../../UI/modals/MyModal";
 import MyInput from "../../../../../UI/input/MyInput";
 import { Box, Link } from "@mui/material";
 import MyButton from "../../../../../UI/buttons/MyButton";
 import SuccessModal from "./SuccessModal";
 import NoPermissionModal from "./NoPermissionModal";
+import { add_public } from "../../../../../../api/publics";
 
 const AddPublicModal = ({ open, setOpen }) => {
-  const [error, setError] = useState(true);
+  const [error, setError] = useState(false);
   const [successOpen, setSuccessOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
+  const [permission, setPermission] = useState(true);
+  const [noPermissionOpen, setNoPermissionOpen] = useState(false);
+
+  const user_id = 268278813;
 
   const handleClick = () => {
     if (error) {
@@ -21,6 +27,8 @@ const AddPublicModal = ({ open, setOpen }) => {
       } else {
         setSuccessOpen(true);
         setOpen(false);
+        const GROUP_ID = inputValue.split("/")[3].replace("club", "");
+        add_public(GROUP_ID, user_id);
       }
     }
   };
@@ -30,9 +38,6 @@ const AddPublicModal = ({ open, setOpen }) => {
     setError(false);
     setInputValue("");
   };
-
-  const [permission, setPermission] = useState(false);
-  const [noPermissionOpen, setNoPermissionOpen] = useState(false);
 
   return (
     <>

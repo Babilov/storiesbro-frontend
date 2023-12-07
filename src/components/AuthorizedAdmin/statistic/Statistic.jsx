@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 
 import PublicSelect from "./selects/PublicSelect";
@@ -7,10 +7,11 @@ import DataPickers from "./dataPickers/DataPickers";
 import MyButton from "../../UI/buttons/MyButton";
 import { PublicsContext } from "../../../context/PublicsContext";
 import Table from "./table/Table";
+import { get_statistic } from "../../../api/publics";
 
 const Statistic = () => {
   const [open, setOpen] = useState(false);
-  const publics = useContext(PublicsContext);
+  const [publics] = useContext(PublicsContext);
   const statistic = [
     {
       publicTitle: "Гонки",
@@ -32,6 +33,13 @@ const Statistic = () => {
     },
   ];
 
+  const handleClick = () => {
+    setOpen(true);
+    get_statistic(223631865, 268278813);
+  };
+
+  // useEffect(() => {get_statistic()}, [])
+
   return (
     <>
       <Grid item md={6} sm={10} xs={12} sx={{ m: "0 auto" }}>
@@ -41,7 +49,7 @@ const Statistic = () => {
 
         <Box sx={{ width: "40%", m: "20px auto" }}>
           <MyButton
-            onClick={() => setOpen(true)}
+            onClick={() => handleClick()}
             options={{ background: "#E37E31", color: "white" }}
           >
             <Typography>Показать</Typography>

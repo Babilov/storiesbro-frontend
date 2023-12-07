@@ -10,7 +10,7 @@ const VkEnter = ({ children }) => {
     <Button
       sx={{
         fontWeight: 600,
-        fontSize: { sx: "16px", sm: "26px" },
+        fontSize: { xs: "16px", md: "26px" },
         color: "black",
         border: `2px solid ${isCustomer ? "white" : "#2A5885"}`,
         borderRadius: "90px",

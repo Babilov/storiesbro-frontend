@@ -15,7 +15,7 @@ const AddPublicButton = ({ setOpen }) => {
     >
       <Box
         sx={{
-          width: { md: "30%", sm: "50", xs: "75" },
+          width: { md: "35%", sm: "50", xs: "75" },
           mb: 2,
           mt: 1,
         }}
@@ -29,8 +29,10 @@ const AddPublicButton = ({ setOpen }) => {
             borderRadius: "90px",
           }}
         >
-          <Typography>Добавить сообщество</Typography>
-          <Box component="img" alt="vk" src={vk} />
+          <Box sx={{ display: "flex", justifyContent: "space-around" }}>
+            <Typography>Добавить сообщество</Typography>
+            <Box component="img" alt="vk" src={vk} />
+          </Box>
         </MyButton>
       </Box>
     </Box>

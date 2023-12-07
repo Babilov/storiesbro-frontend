@@ -2,6 +2,7 @@ import { Grid, Typography } from "@mui/material";
 import React from "react";
 import Mca from "../mca/Mca";
 import Jca from "../jca/Jca";
+import Vca from "../vca/Vca";
 
 const ContentVideos = () => {
   return (
@@ -40,6 +41,8 @@ const ContentVideos = () => {
       <Mca />
 
       <Jca />
+
+      <Vca />
     </Grid>
   );
 };

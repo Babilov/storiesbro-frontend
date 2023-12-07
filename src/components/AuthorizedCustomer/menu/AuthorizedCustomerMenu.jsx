@@ -9,7 +9,7 @@ import question from "./images/question.svg";
 import tagUser from "./images/tagUser.svg";
 import MyMenu from "../../UI/menu/MyMenu";
 
-const AuthorizedAdminMenu = () => {
+const AuthorizedCustomerMenu = () => {
   const links = [
     {
       icon: <Box component="img" src={flash} />,
@@ -26,28 +26,28 @@ const AuthorizedAdminMenu = () => {
     {
       icon: <Box component="img" src={list} />,
       linkText: "Списки сообществ",
-      linkHref: "/publics",
+      linkHref: "/customer-publics",
     },
 
     {
       icon: <Box component="img" src={moneys} />,
       linkText: "Реф. система",
-      linkHref: "/referal",
+      linkHref: "/customer-referal",
     },
 
     {
       icon: <Box component="img" src={question} />,
       linkText: "Помощь",
-      linkHref: "/help",
+      linkHref: "/customer-help",
     },
 
     {
       icon: <Box component="img" src={tagUser} />,
       linkText: "Тех. поддержка",
-      linkHref: "/support",
+      linkHref: "/customer-support",
     },
   ];
   return <MyMenu links={links} />;
 };
 
-export default AuthorizedAdminMenu;
+export default AuthorizedCustomerMenu;

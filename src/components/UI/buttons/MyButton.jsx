@@ -1,12 +1,14 @@
 import { Button } from "@mui/material";
 import React from "react";
 
-const MyButton = ({ children, options, onClick }) => {
+const MyButton = ({ children, options, onClick, disabled = false }) => {
   return (
     <Button
       fullWidth
+      disabled={disabled}
       onClick={onClick}
       sx={{
+        display: options["display"] ? options["display"] : "block",
         background: options["background"],
         color: options["color"] ? options["color"] : "white",
         borderRadius: options["borderRadius"]

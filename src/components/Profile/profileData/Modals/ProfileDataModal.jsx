@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useSelector } from "react-redux";
+
 import MyModal from "../../../UI/modals/MyModal";
 import { Box, Typography } from "@mui/material";
 import MyButton from "../../../UI/buttons/MyButton";
 import MyInput from "../../../UI/input/MyInput";
 import ErrorMessage from "../../../UI/errors/ErrorMessage";
 import RightCodeModal from "./RightCodeModal";
+import { API_URL } from "../../../../constants/constatns";
 
 const ProfileDataModal = ({
   modalOpen,
@@ -16,7 +20,18 @@ const ProfileDataModal = ({
   const [code, setCode] = useState("");
   const [error, setError] = useState(false);
 
-  const handleClick = () => {
+  const id = useSelector((store) => store.user)["id"];
+
+  const success = () => {
+    setModalOpen(false);
+    setError(false);
+    setEmail(newEmail);
+    setCode("");
+    setRightCodeModalOpen(true);
+  };
+
+  const handleClick = (id) => {
+    /*
     if (confirmCode === code) {
       setModalOpen(false);
       setError(false);
@@ -26,6 +41,13 @@ const ProfileDataModal = ({
     } else {
       setError(true);
     }
+    */
+    axios
+      .post(`${API_URL}/${id}`)
+      .then(axios.post(`${API_URL}confirmation/${id}${code}`).then(success()))
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   const handleClose = () => {

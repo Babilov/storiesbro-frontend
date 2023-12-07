@@ -1,9 +1,24 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import ProfileHeader from "../../components/Profile/profileHeader/ProfileHeader";
 import ProfileMenu from "../../components/Profile/profileMenu/ProfileMenu";
+import { useSelector } from "react-redux";
+import axios from "axios";
+import { API_URL } from "../../constants/constatns";
+import { get_list } from "../../api/publics";
 
 const Profile = ({ children, title }) => {
+  //const tokken = useSelector((store) => store.user);
+  const tokken = localStorage["token"];
+
+  axios
+    .get(`${API_URL}profile`, {
+      headers: { Authorization: `Bearer ${tokken}` },
+    })
+    .then(function (responce) {
+      console.log(responce["data"]);
+    });
+
   return (
     <>
       <ProfileHeader />

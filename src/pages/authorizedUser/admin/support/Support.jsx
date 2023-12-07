@@ -7,7 +7,7 @@ import MyButton from "../../../../components/UI/buttons/MyButton";
 
 const Support = () => {
   return (
-    <Grid item md={10} xs={12} className="grid" sx={{ pl: 5, pr: 5 }}>
+    <Grid item md={10} xs={12} className="grid">
       <Typography className="title">Тех. поддержка</Typography>
       <Box className="spaceBetween">
         <Box>
@@ -22,26 +22,6 @@ const Support = () => {
           >
             © Анонимный философ
           </Typography>
-          <Box sx={{ width: { md: "50%", sm: "75%", xs: "100%" }, mt: 3 }}>
-            <MyButton
-              options={{
-                background: "white",
-                color: "black",
-                border: "2px solid #2A5885",
-                borderRadius: "90px",
-              }}
-            >
-              <Box className="spaceBetween">
-                <Typography className="buttonFont">Написать</Typography>
-                <Box
-                  component="img"
-                  alt="vk"
-                  src={vk}
-                  sx={{ width: { md: "100%", xs: "20%" } }}
-                />
-              </Box>
-            </MyButton>
-          </Box>
         </Box>
         <Box>
           <Box
@@ -51,6 +31,21 @@ const Support = () => {
             sx={{ width: "100%" }}
           />
         </Box>
+      </Box>
+      <Box sx={{ width: { md: "50%", sm: "75%", xs: "100%" }, mt: 3 }}>
+        <MyButton
+          options={{
+            background: "white",
+            color: "black",
+            border: "2px solid #2A5885",
+            borderRadius: "90px",
+          }}
+        >
+          <Box className="centerCenter">
+            <Typography className="buttonFont">Написать</Typography>
+            <Box component="img" alt="vk" src={vk} sx={{ width: "10%" }} />
+          </Box>
+        </MyButton>
       </Box>
     </Grid>
   );

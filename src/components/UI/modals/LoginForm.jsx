@@ -5,13 +5,9 @@ import ConfirmationForm from "./ConfirmationForm";
 import ChangePassword from "./ChangePassword";
 import LoginFormInfo from "./LoginFormInfo";
 import RegistrationForm from "./RegistrationForm";
+import axios from "axios";
 
 const LoginForm = ({ isLoginFormOpen, setIsLoginFormOpen }) => {
-  const handleConfirmForm = () => {
-    setIsLoginFormOpen(false);
-    setIsConfirmPageOpen(true);
-  };
-
   const handleChangePassword = () => {
     setIsLoginFormOpen(false);
     setIsChangePasswordOpen(true);
@@ -54,7 +50,8 @@ const LoginForm = ({ isLoginFormOpen, setIsLoginFormOpen }) => {
         setIsFormOpen={() => setIsLoginFormOpen(false)}
       >
         <LoginFormInfo
-          handleConfirmForm={handleConfirmForm}
+          setIsLoginFormOpen={setIsLoginFormOpen}
+          setIsConfirmPageOpen={setIsConfirmPageOpen}
           handleChangePassword={handleChangePassword}
           handleRegistrationForm={handleRegistrationForm}
         />

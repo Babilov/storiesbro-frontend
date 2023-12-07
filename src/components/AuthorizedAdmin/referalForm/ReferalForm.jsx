@@ -19,7 +19,9 @@ const ReferalForm = () => {
         className="centerForm grayBorder spaceBetween"
         sx={{ width: { md: "30%", xs: "100%" } }}
       >
-        <Link sx={{ fontSize: { md: "18px", xs: "14px" } }}>
+        <Link
+          sx={{ fontSize: { md: "18px", xs: "14px" }, textAlign: "center" }}
+        >
           Storisbro.com/?_ref=2Rh46f3L
         </Link>
         <Box component="img" alt="copy" src={copy} sx={{ cursor: "pointer" }} />

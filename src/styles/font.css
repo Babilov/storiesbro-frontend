@@ -27,11 +27,55 @@
   font-weight: 900;
 }
 
+.grid .xlSizeText {
+  font-size: 38px;
+  font-weight: 600;
+}
+
+.grid .xlSizeText500 {
+  font-size: 38px;
+  font-weight: 500;
+}
+
+
+
+.grid .mdSizeText {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.grid .md500SizeText {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.grid .mdBoldSizeText {
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .grid .title {
   font-size: 32px;
   font-weight: 600;
   text-align: center;
   margin-bottom: 40px;
+}
+
+.grid .lSizeText {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.grid .Size25Text {
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.grid .lSizeTextLeft {
+  font-size: 32px;
+  font-weight: 600;
 }
 
 .grid .centerText {
@@ -47,6 +91,11 @@
 .grid .bold {
   font-size: 24px;
   font-weight: 700;
+}
+
+.grid .md500{
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .grid .quote {
@@ -89,12 +138,50 @@ button .buttonFont {
   button .buttonFont {
     font-size: 16px;
   }
+
+  .grid .xlSizeText {
+    font-size: 18px;
+  }
+
+  .grid .md500 {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .grid .lSizeTextLeft {
+    font-size: 18px;
+  }
+  .grid .xlSizeText500{
+    font-size: 24px;
+  }
+  
+  .grid .Size25Text {
+    font-size: 16px;
+  }
+
+  .grid .mdBoldSizeText{
+    font-size: 14px;
+  }
+
+  .grid .mdSizeText{
+    font-size: 14px;
+  }
 }
 
+.grid .sm600 {
+  font-size: 12px;
+  font-weight: 600;
+}
 
-.grid .mdSizeText {
+.grid .sm {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.grid .mdSizeTextCenter {
   font-size: 18px;
   font-weight: 400;
+  text-align: center;
 }
 
 .grid .sm500 {

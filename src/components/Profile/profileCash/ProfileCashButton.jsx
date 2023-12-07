@@ -6,7 +6,7 @@ import MyButton from "../../UI/buttons/MyButton";
 const ProfileCashButton = ({ to, text, background, color, border }) => {
   return (
     <Box sx={{ width: "50%", mr: 1 }}>
-      <Link to={to}>
+      <Link to={to} style={{ textDecoration: "none" }}>
         <MyButton
           options={{ background: background, color: color, border: border }}
         >

@@ -11,6 +11,10 @@ import {
 } from "@mui/material";
 import GradientButton from "../buttons/GradientButton";
 import EmailConfirmationForm from "./EmailConfiramtionForm";
+import axios from "axios";
+import { API_URL } from "../../../constants/constatns";
+
+const REGISTER_LINK = `${API_URL}register/`;
 
 const RegistrationForm = ({
   isRegistrationForm,
@@ -26,6 +30,10 @@ const RegistrationForm = ({
   const handleCloseRegistration = () => {
     setIsRegistrationForm(false);
     setIsChecked(false);
+  };
+
+  const handleRegister = () => {
+    axios.post(REGISTER_LINK, { email: email, password: password });
   };
 
   const [isChecked, setIsChecked] = useState(false);
@@ -64,7 +72,11 @@ const RegistrationForm = ({
           onClick={() => handleConfirmEmail()}
           sx={{ width: "300px", m: "20px auto" }}
         >
-          <GradientButton height="52px" disabled={!isChecked}>
+          <GradientButton
+            handleClick={handleRegister}
+            height="52px"
+            disabled={!isChecked}
+          >
             <Typography sx={{ fontSize: "18px", fontWeight: 600 }}>
               Зарегистрироваться
             </Typography>

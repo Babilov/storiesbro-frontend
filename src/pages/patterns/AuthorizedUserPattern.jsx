@@ -1,56 +1,32 @@
 import { Container, Grid } from "@mui/material";
 import React, { useState } from "react";
 
-import cosmetic from "./authorizedUserImages/cosmetic.svg";
-import thisUser from "./authorizedUserImages/thisUser.svg";
-import pikchi from "./authorizedUserImages/pikchi.svg";
-import guides from "./authorizedUserImages/guides.svg";
-
 import AuthorizedUserHeader from "../../components/authorizedUser/authorizedUserHeader/AuthorizedUserHeader";
 import AuthorizedAdminMenu from "../../components/authorizedAdmin/menu/AuthorizedAdminMenu";
 import { PublicsContext } from "../../context/PublicsContext";
+import AuthorizedCustomerMenu from "../../components/authorizedCustomer/menu/AuthorizedCustomerMenu";
 
-const AuthorizedUserPattern = ({ children, ismainpage }) => {
-  const [publics, setPublics] = useState([
-    {
-      id: 0,
-      image: thisUser,
-      title: "Этот пользователь",
-      status: "На модерации",
-    },
-    {
-      id: 1,
-      image: pikchi,
-      title: "Пикчи <33",
-      status: "Активен",
-    },
-    {
-      id: 2,
-      image: guides,
-      title: "Гайды",
-      status: "Отклонён",
-    },
-    {
-      id: 3,
-      image: cosmetic,
-      title: "Косметика",
-      status: "Выключен",
-    },
-  ]);
+const AuthorizedUserPattern = ({
+  children,
+  ismainpage,
+  isCustomer = false,
+  menu = true,
+}) => {
   return (
-    <PublicsContext.Provider value={[publics, setPublics]}>
-      <Container>
-        <AuthorizedUserHeader ismainpage={ismainpage} />
-        <Grid container>
+    <Container>
+      <AuthorizedUserHeader ismainpage={ismainpage} isCustomer={isCustomer} />
+      <Grid container>
+        {menu && (
           <Grid item lg={2} xs={0}>
-            <AuthorizedAdminMenu />
+            {isCustomer ? <AuthorizedCustomerMenu /> : <AuthorizedAdminMenu />}
           </Grid>
-          <Grid item lg={10} xs={12}>
-            {children}
-          </Grid>
+        )}
+
+        <Grid item lg={menu ? 10 : 12} xs={12}>
+          {children}
         </Grid>
-      </Container>
-    </PublicsContext.Provider>
+      </Grid>
+    </Container>
   );
 };
 

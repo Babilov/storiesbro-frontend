@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  Box,
-  ClickAwayListener,
-  Divider,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
@@ -16,8 +10,9 @@ import Switcher from "../../../components/UI/switcher/Switcher";
 import MyButton from "../../../components/UI/buttons/MyButton";
 import AdminLeftSideBar from "../../authorizedAdmin/adminLeftSideBar/AdminLeftSideBar";
 import ExitMenu from "./exitMenu/ExitMenu";
+import AuthorizedCustomerLeftSidebar from "../../authorizedCustomer/authorizedCustomerLeftSidebar/AuthorizedCustomerLeftSidebar";
 
-const AuthorizedUserHeader = ({ ismainpage = false }) => {
+const AuthorizedUserHeader = ({ ismainpage = false, isCustomer }) => {
   const [open, setOpen] = useState(false);
   const [leftSidebarOpen, setLeftSidebarOpen] = useState(false);
 
@@ -37,7 +32,14 @@ const AuthorizedUserHeader = ({ ismainpage = false }) => {
           width: { xs: "30px", sm: "60px" },
         }}
       />
-      <AdminLeftSideBar open={leftSidebarOpen} setOpen={setLeftSidebarOpen} />
+      <AdminLeftSideBar
+        open={!isCustomer && leftSidebarOpen}
+        setOpen={setLeftSidebarOpen}
+      />
+      <AuthorizedCustomerLeftSidebar
+        open={isCustomer && leftSidebarOpen}
+        setOpen={setLeftSidebarOpen}
+      />
       <Grid
         item
         xs={2}
@@ -47,6 +49,7 @@ const AuthorizedUserHeader = ({ ismainpage = false }) => {
             xs: "block",
             lg: "none",
           },
+          cursor: "pointer",
         }}
         component="img"
         alt="menu"

@@ -2,11 +2,19 @@ import React from "react";
 import PersonIcon from "@mui/icons-material/Person";
 import { Box, ClickAwayListener, Divider } from "@mui/material";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import exit from "../images/exit.svg";
 import settings from "../images/settings.svg";
+import axios from "axios";
+import { API_URL } from "../../../../constants/constatns";
+
+const handleExit = (id) => {
+  axios.post(`${API_URL}`, { id: id });
+};
 
 const ExitMenu = ({ open, setOpen }) => {
+  const id = useSelector((store) => store.user)["id"];
   return (
     <>
       <ClickAwayListener onClickAway={() => setOpen(false)}>
@@ -54,7 +62,7 @@ const ExitMenu = ({ open, setOpen }) => {
                 src={exit}
                 sx={{ mr: 1, ml: 1 }}
               />
-              <NavLink to="/exit" className="linkItem">
+              <NavLink onClick={() => handleExit(id)} className="linkItem">
                 Выйти
               </NavLink>
             </Box>

@@ -4,6 +4,11 @@
     justify-content: space-between;
 }
 
+.justifyCenter {
+    display: flex;
+    justify-content: center;
+}
+
 .spaceAround {
     display: flex;
     align-items: center;
@@ -12,5 +17,18 @@
 
 .alignCenter {
     display: flex;
+    align-items: center;
+}
+
+.columnCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.centerCenter {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }

@@ -1,7 +1,9 @@
-import { Divider, Grid, Typography, Box } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Divider, Grid, Typography, Box, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 import DeletePublicModal from "./modals/DeletePublicModal";
+import { get_list } from "../../../../../api/publics";
 
 const Table = ({ publics, setPublics }) => {
   const handleDelete = (id) => {
@@ -100,10 +102,24 @@ const Table = ({ publics, setPublics }) => {
                 justifyContent: "center",
               }}
             >
-              <Typography sx={{ cursor: "pointer" }}>Настройки</Typography>
+              <Link
+                to={`/publics/setting/${publicObj["id"]}`}
+                sx={{
+                  m: 2,
+                  cursor: "pointer",
+                }}
+                className="linkItem"
+              >
+                Настройки
+              </Link>
               <Typography>|</Typography>
               <Typography
-                sx={{ cursor: "pointer" }}
+                className="delete"
+                sx={{
+                  cursor: "pointer",
+
+                  ":hover": { color: "#E37E31" },
+                }}
                 onClick={() => handleDelete(publicObj["id"])}
               >
                 Удалить
@@ -152,9 +168,16 @@ const Table = ({ publics, setPublics }) => {
               </Typography>
             </Box>
             <Box className="spaceAround" sx={{}}>
-              <Typography sx={{ fontSize: "12px", m: 2, cursor: "pointer" }}>
+              <Link
+                to={`/publics/setting/${publicObj["id"]}`}
+                sx={{
+                  m: 2,
+                  cursor: "pointer",
+                }}
+                className="menuItem"
+              >
                 Настройки
-              </Typography>
+              </Link>
               <Typography sx={{ color: "#CBCBCB", m: 2 }}>|</Typography>
               <Typography
                 sx={{ fontSize: "12px", m: 2, cursor: "pointer" }}
